@@ -7,7 +7,7 @@ const Home = () => {
         <>
             <Navbar />
             <div className="container landing">
-                <div className="row landing-inner">
+                <div className="row gy-5 landing-inner">
                     <div className="col-lg-6">
                         <h1 className="landing-title">Unitastic</h1>
                         <h2 className="landing-subtitle">A one-stop solution for all your university needs</h2>
@@ -19,8 +19,9 @@ const Home = () => {
                         </p>
                         <p className="landing-text">
                             Unitastic also provides you with all the materials you need for your
-                            university life, be it notes, question papers, or even textbooks.
+                            university life, be it notes, previous question papers, or even textbooks.
                         </p>
+                        <a href="/semesters" className="btn btn-primary rounded-5">Get Materials</a>
                     </div>
                     <div className="col-lg-6">
                         <img src={studentsillustration} className="img-fluid" alt="placeholder" />
