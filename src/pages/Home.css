@@ -1,0 +1,45 @@
+.landing {
+    padding-top: 25vh;
+}
+
+.landing-title {
+    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    color: var(--accent);
+}
+
+.landing-subtitle {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.landing-line {
+    width: 100px;
+    height: 5px;
+    background-color: var(--accent);
+}
+
+.landing-text {
+    font-size: 1.2rem;
+    color: var(--secondary);
+}
+
+@media only screen and (min-width: 1200px) {
+    .landing {
+        height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .landing {
+        padding-top: 15vh;
+    }
+
+    .landing-title {
+        font-size: 2rem;
+    }
+
+    .landing-text {
+        font-size: 1rem;
+    }
+}

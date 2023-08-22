@@ -1,0 +1,17 @@
+.navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.7rem;
+    color: var(--accent);
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+.navbar-brand:hover {
+    opacity: 0.8;
+    color: var(--accent);
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
