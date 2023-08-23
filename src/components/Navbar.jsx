@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -6,7 +8,7 @@ const Navbar = () => {
             <div className="container-fluid">
                 <a href="/" className="navbar-brand">Unitastic</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                    <span className="navbar-toggler-icon"></span>
+                    <FontAwesomeIcon icon={faBarsStaggered}/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarContent">
                     <ul className="navbar-nav text-center ms-auto mb-2 mb-lg-0">

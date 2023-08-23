@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { logEvent } from "firebase/analytics"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faXmark } from "@fortawesome/free-solid-svg-icons"
 
 const SGPACalculator = () => {
     const [subjects, setSubjects] = useState([])
@@ -44,12 +46,12 @@ const SGPACalculator = () => {
                                         <div className="col-lg-2">
                                             <p className="mt-1">Subject {index+1}</p>
                                         </div>
-                                        <div className="col-lg-4 mb-2 mb-lg-0">
+                                        <div className="col-5 col-lg-4 mb-2 mb-lg-0">
                                             <input type="number" className="form-control" id={"credits"+index} placeholder="Credits" onChange={(e) => {
                                                 setSubjects([...subjects.slice(0, index), { credits: e.target.value, grade: subjects[index].grade }, ...subjects.slice(index+1)])
                                             }} />
                                         </div>
-                                        <div className="col-lg-4 mb-2 mb-lg-0">
+                                        <div className="col-4 col-lg-4 mb-2 mb-lg-0">
                                             <select className="form-select" id={"grade"+index} onChange={(e) => {
                                                 setSubjects([...subjects.slice(0, index), { credits: subjects[index].credits, grade: e.target.value }, ...subjects.slice(index+1)])
                                             }}>
@@ -62,10 +64,10 @@ const SGPACalculator = () => {
                                                 <option value="F">F</option>
                                             </select>
                                         </div>
-                                        <div className="col-lg-2">
+                                        <div className="col-3 col-lg-2">
                                             <button className="btn btn-danger rounded-5" onClick={() => {
                                                 setSubjects([...subjects.slice(0, index), ...subjects.slice(index+1)])
-                                            }}><b>&times;</b></button>
+                                            }}><FontAwesomeIcon icon={faXmark} /></button>
                                         </div>
                                     </div>
                                 )

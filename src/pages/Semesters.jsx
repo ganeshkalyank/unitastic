@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
-import { db } from "../main";
-import Navbar from "../components/Navbar";
+import { useState, useEffect } from "react"
+import { collection, getDocs, query, orderBy } from "firebase/firestore"
+import { db } from "../main"
+import Navbar from "../components/Navbar"
 import "./Semesters.css"
 
 const Semesters = () => {
@@ -9,18 +9,19 @@ const Semesters = () => {
     const [loading, setLoading] = useState(true);
 
     const getSemesters = async () => {
-        const semestersRef = collection(db, "semesters");
-        const q = query(semestersRef, orderBy("name"));
-        const semestersSnapshot = await getDocs(q);
-        const semestersList = semestersSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-        setSemesters(semestersList);
+        const semestersRef = collection(db, "semesters")
+        const q = query(semestersRef, orderBy("name"))
+        const semestersSnapshot = await getDocs(q)
+        const semestersList = semestersSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+        setSemesters(semestersList)
+
+        setLoading(false)
     }
 
     useEffect(() => {
-        getSemesters();
-        setLoading(false);
-        document.title = "Semesters | Unitastic";
-    }, []);
+        getSemesters()
+        document.title = "Semesters | Unitastic"
+    }, [])
 
     return (
         <>

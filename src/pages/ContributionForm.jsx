@@ -33,7 +33,7 @@ const ContributionForm = () => {
                         <h3 className="text-center">Contribute</h3>
                         <p>
                             Contribute to Unitastic by adding any missing materials, previous
-                            question papers, textbooks or Presentations.
+                            question papers, textbooks or presentations.
                         </p>
                         <hr />
                         <form onSubmit={contributeHandler}>

@@ -24,11 +24,12 @@ const Semester = () => {
         const deptsSnapshot = await getDocs(q2)
         const deptsList = deptsSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
         setDepts(deptsList)
+        
+        setLoading(false)
     }
 
     useEffect(() => {
         getData()
-        setLoading(false)
         document.title = "Semester | Unitastic"
     }, [])
 
