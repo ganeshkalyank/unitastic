@@ -43,9 +43,9 @@ const Navbar = () => {
                                 <li><a className="dropdown-item" href="https://linktr.ee/materialhub" target="_blank">Material Hub</a></li>
                             </ul>
                         </li>
-                        {/* <li className="nav-item">
-                            <a href="/about" className="nav-link">About</a>
-                        </li> */}
+                        <li className="nav-item">
+                            <a href="/contribute" className="nav-link">Contribute</a>
+                        </li>
                     </ul>
                 </div>
             </div>

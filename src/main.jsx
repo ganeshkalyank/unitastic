@@ -14,6 +14,7 @@ import SGPACalculator from './pages/SGPACalculator'
 import Home from './pages/Home'
 import Semesters from './pages/Semesters'
 import Semester from './pages/Semester'
+import ContributionForm from './pages/ContributionForm'
 
 const app = initializeApp(firebaseConfig)
 const analytics = getAnalytics(app)
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
   { path: '/externals', element: <ExpectedExternals /> },
   { path: '/attendance', element: <AttendanceCalculator /> },
   { path: '/sgpa', element: <SGPACalculator /> },
+  { path: '/contribute', element: <ContributionForm /> },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
