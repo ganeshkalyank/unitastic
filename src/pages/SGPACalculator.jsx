@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { logEvent } from "firebase/analytics"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
@@ -22,6 +22,10 @@ const SGPACalculator = () => {
         setSGPA(totalPoints / totalCredits)
         logEvent(analytics, 'calculated_sgpa', {subjects: subjects, sgpa: sgpa})
     }
+
+    useEffect(() => {
+        document.title = "SGPA Calculator | Unitastic"
+    }, [])
 
     return (
         <>

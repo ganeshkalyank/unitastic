@@ -29,6 +29,7 @@ const Semester = () => {
     useEffect(() => {
         getData()
         setLoading(false)
+        document.title = "Semester | Unitastic"
     }, [])
 
     return (

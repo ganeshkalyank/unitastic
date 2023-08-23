@@ -1,5 +1,5 @@
 import { logEvent } from "firebase/analytics"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 
@@ -29,6 +29,10 @@ const ExpectedExternals = () => {
         })
         logEvent(analytics, 'calculate_externals', {internals: internals})
     }
+
+    useEffect(() => {
+        document.title = "Expected Externals | Unitastic"
+    }, [])
 
     return (
         <>

@@ -19,6 +19,7 @@ const Semesters = () => {
     useEffect(() => {
         getSemesters();
         setLoading(false);
+        document.title = "Semesters | Unitastic";
     }, []);
 
     return (

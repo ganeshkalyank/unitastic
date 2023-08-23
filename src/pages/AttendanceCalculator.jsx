@@ -1,5 +1,5 @@
 import { logEvent } from "firebase/analytics"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 
@@ -12,6 +12,10 @@ const AttendanceCalculator = () => {
         setCanBunk(Math.floor((credits * 16 * 0.2) - bunked))
         logEvent(analytics, 'calculated_attendance', {credits: credits, bunked: bunked, canBunk: canBunk})
     }
+
+    useEffect(() => {
+        document.title = "Attendance Calculator | Unitastic"
+    }, [])
 
     return (
         <>
