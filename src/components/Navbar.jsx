@@ -17,7 +17,7 @@ const Navbar = () => {
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Utilities
                             </a>
-                            <ul className="dropdown-menu">
+                            <ul className="dropdown-menu text-center">
                                 <li><a className="dropdown-item" href="/sgpa">SGPA Calculator</a></li>
                                 <li><a className="dropdown-item" href="/externals">Required Externals</a></li>
                                 <li><a className="dropdown-item" href="/attendance">Class Skippability</a></li>
@@ -27,7 +27,7 @@ const Navbar = () => {
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Useful Links
                             </a>
-                            <ul className="dropdown-menu">
+                            <ul className="dropdown-menu text-center">
                                 <li><a className="dropdown-item" href="https://webstream.sastra.edu/sastrapwi/" target="_blank">Student Web Interface</a></li>
                                 <li><a className="dropdown-item" href="https://webstream.sastra.edu/sastraparentweb/" target="_blank">Parent Web Interface</a></li>
                                 <li><a className="dropdown-item" href="https://biometric.sastra.edu/" target="_blank">Hostel Leave Portal</a></li>
@@ -38,9 +38,9 @@ const Navbar = () => {
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Archives
                             </a>
-                            <ul className="dropdown-menu dropdown-menu-end">
-                                <li><a className="dropdown-item" href="https://linktr.ee/materialhub" target="_blank">Material Hub</a></li>
+                            <ul className="dropdown-menu text-center dropdown-menu-end">
                                 <li><a className="dropdown-item" href="https://materialbase.github.io/" target="_blank">Material Base</a></li>
+                                <li><a className="dropdown-item" href="https://linktr.ee/materialhub" target="_blank">Material Hub</a></li>
                             </ul>
                         </li>
                         {/* <li className="nav-item">
