@@ -1,4 +1,6 @@
 const firebaseConfig = {
 }
 
-export { firebaseConfig }
+const apininjaskey = ""
+
+export { firebaseConfig, apininjaskey }

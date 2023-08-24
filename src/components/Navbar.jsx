@@ -40,13 +40,19 @@ const Navbar = () => {
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Archives
                             </a>
-                            <ul className="dropdown-menu text-center dropdown-menu-end">
+                            <ul className="dropdown-menu text-center">
                                 <li><a className="dropdown-item" href="https://materialbase.github.io/" target="_blank">Material Base</a></li>
                                 <li><a className="dropdown-item" href="https://linktr.ee/materialhub" target="_blank">Material Hub</a></li>
                             </ul>
                         </li>
-                        <li className="nav-item">
-                            <a href="/contribute" className="nav-link">Contribute</a>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Contribute
+                            </a>
+                            <ul className="dropdown-menu text-center dropdown-menu-end">
+                                <li><a className="dropdown-item" href="/contribute">Materials</a></li>
+                                <li><a className="dropdown-item" href="/feedback">Feedback</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
