@@ -4,6 +4,8 @@ import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
+import Footer from "../components/Footer"
+import "./SGPACalculator.css"
 
 const SGPACalculator = () => {
     const [subjects, setSubjects] = useState([])
@@ -32,7 +34,7 @@ const SGPACalculator = () => {
     return (
         <>
             <Navbar />
-            <div className="container" style={{ marginTop: "20vh", marginBottom: "20vh" }}>
+            <div className="container sgpa-container">
                 <div className="row d-flex justify-content-center p-3">
                     <div className="col-lg-6 container shadow bg-white p-3 rounded-3">
                         <h4 className="text-center">SGPA Calculator</h4>
@@ -65,7 +67,7 @@ const SGPACalculator = () => {
                                             </select>
                                         </div>
                                         <div className="col-3 col-lg-2">
-                                            <button className="btn btn-danger rounded-5" onClick={() => {
+                                            <button className="btn btn-danger d-flex justify-content-center align-items-center rounded-5" onClick={() => {
                                                 setSubjects([...subjects.slice(0, index), ...subjects.slice(index+1)])
                                             }}><FontAwesomeIcon icon={faXmark} /></button>
                                         </div>
@@ -79,6 +81,7 @@ const SGPACalculator = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

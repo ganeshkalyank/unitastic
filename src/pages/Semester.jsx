@@ -4,6 +4,7 @@ import { collection, getDocs, query, orderBy } from "firebase/firestore"
 import { db } from "../main"
 import Navbar from "../components/Navbar"
 import "./Semester.css"
+import Footer from "../components/Footer"
 
 const Semester = () => {
     const [depts, setDepts] = useState([])
@@ -80,6 +81,7 @@ const Semester = () => {
                     </div>
                 </div>
             )}
+            <Footer />
         </>
     )
 }

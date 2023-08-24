@@ -2,6 +2,8 @@ import { logEvent } from "firebase/analytics"
 import { useEffect, useState } from "react"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
+import "./AttendanceCalculator.css"
 
 const AttendanceCalculator = () => {
     const [credits, setCredits] = useState(0)
@@ -20,7 +22,7 @@ const AttendanceCalculator = () => {
     return (
         <>
             <Navbar />
-            <div className="container" style={{ marginTop: "20vh", marginBottom: "20vh" }}>
+            <div className="container attendance-container">
                 <div className="row d-flex justify-content-center p-3 mt-5">
                     <div className="col-lg-6 container shadow bg-white p-3 rounded-3 bg-white">
                         <h4 className="text-center">Class Skippability Calculator</h4>
@@ -41,6 +43,7 @@ const AttendanceCalculator = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

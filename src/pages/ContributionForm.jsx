@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import Navbar from "../components/Navbar"
 import "./ContributionForm.css"
+import Footer from "../components/Footer"
 
 const ContributionForm = () => {
     const [contribution, setContribution] = useState({})
@@ -11,7 +12,10 @@ const ContributionForm = () => {
         e.preventDefault()
         setSubmitting(true)
         try {
-            axios.post("https://formspree.io/f/xpzgdjwa", contribution)
+            const response = await axios.post("https://formspree.io/f/xpzgdjwa", contribution)
+            if (response.status !== 200) {
+                throw new Error()
+            }
             setResponse("Thank you for your contribution. We will review it and add it to our database.")
             setSubmitting(false)
         } catch (error) {
@@ -54,8 +58,8 @@ const ContributionForm = () => {
                                 <label htmlFor="department">Department</label>
                             </div>
                             <div className="form-floating mb-3">
-                                <input type="text" className="form-control" id="subject" placeholder="Subject" onChange={(e) => setContribution({...contribution, subject: e.target.value})} required />
-                                <label htmlFor="subject">Subject</label>
+                                <input type="text" className="form-control" id="course" placeholder="Course" onChange={(e) => setContribution({...contribution, course: e.target.value})} required />
+                                <label htmlFor="course">Course</label>
                             </div>
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control" id="driveurl" placeholder="Drive URL" onChange={(e) => setContribution({...contribution, driveurl: e.target.value})} required />
@@ -67,6 +71,7 @@ const ContributionForm = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

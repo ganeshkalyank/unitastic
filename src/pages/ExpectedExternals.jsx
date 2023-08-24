@@ -2,6 +2,8 @@ import { logEvent } from "firebase/analytics"
 import { useEffect, useState } from "react"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
+import "./ExpectedExternals.css"
 
 const ExpectedExternals = () => {
     const [externals, setExternals] = useState({})
@@ -37,7 +39,7 @@ const ExpectedExternals = () => {
     return (
         <>
             <Navbar />
-            <div className="container" style={{ marginTop: "20vh", marginBottom: "20vh" }}>
+            <div className="container externals-container">
                 <div className="row d-flex justify-content-center p-3 mt-5">
                     <div className="col-lg-6 container shadow bg-white p-3 rounded-3">
                         <h4 className="text-center">Expected Externals</h4>
@@ -85,6 +87,7 @@ const ExpectedExternals = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
