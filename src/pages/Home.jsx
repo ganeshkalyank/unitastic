@@ -58,6 +58,9 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="row mt-5">
+                        <div className="col-lg-6 d-flex d-lg-none justify-content-center">
+                            <img src={calculator} className="img-fluid" alt="Calculator" />
+                        </div>
                         <div className="col-lg-6">
                             <h2 className="services-title mt-5 mb-4">Utilities</h2>
                             <p className="services-text">
@@ -74,7 +77,7 @@ const Home = () => {
                             <a href="/attendance" className="btn btn-primary me-2 mb-2 rounded-5">Skippability Calculator</a>
                             <a href="/externals" className="btn btn-primary me-2 mb-2 rounded-5">Expected Externals Calculator</a>
                         </div>
-                        <div className="col-lg-6 d-flex justify-content-center">
+                        <div className="col-lg-6 d-none d-lg-flex justify-content-center">
                             <img src={calculator} className="img-fluid" alt="Calculator" />
                         </div>
                     </div>

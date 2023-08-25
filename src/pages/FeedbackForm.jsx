@@ -56,7 +56,7 @@ const FeedbackForm = () => {
                             </div>
                             <div className="form-floating mb-3">
                                 <select className="form-select" id="type" onChange={(e) => setFeedback({...feedback, type: e.target.value})} required>
-                                    <option value="" disabled selected>Select Feedback Type</option>
+                                    <option value="">Select Feedback Type</option>
                                     <option value="suggestion">Suggestion</option>
                                     <option value="discrepancy">Discrepancy</option>
                                 </select>
