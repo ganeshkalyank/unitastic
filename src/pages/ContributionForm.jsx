@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { logEvent } from "firebase/analytics"
+import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 import "./ContributionForm.css"
 import Footer from "../components/Footer"
@@ -16,9 +18,11 @@ const ContributionForm = () => {
             if (response.status !== 200) {
                 throw new Error()
             }
+            logEvent(analytics, 'contribution_submitted', {contribution: contribution})
             setResponse("Thank you for your contribution. We will review it and add it to our database.")
             setSubmitting(false)
         } catch (error) {
+            logEvent(analytics, 'contribution_submission_failed', {contribution: contribution})
             setResponse("Oops! Something went wrong. Please try again.")
             setSubmitting(false)
         }

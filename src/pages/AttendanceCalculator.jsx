@@ -16,7 +16,7 @@ const AttendanceCalculator = () => {
     }
 
     useEffect(() => {
-        document.title = "Attendance Calculator | Unitastic"
+        document.title = "Class Skippability | Unitastic"
     }, [])
 
     return (

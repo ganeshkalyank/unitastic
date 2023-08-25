@@ -35,7 +35,7 @@ const Semesters = () => {
                 </div>
             ) : (
                 <div className="container semesters-container">
-                    <h3 className="text-center">Select your Semester</h3>
+                    <h3 className="text-center">Select Category</h3>
                     <div className="row gy-2 mt-3">
                         {
                             semesters.map(semester => (

@@ -1,5 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
+import { logEvent } from "firebase/analytics"
+import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import "./FeedbackForm.css"
@@ -8,6 +10,7 @@ const FeedbackForm = () => {
     const [feedback, setFeedback] = useState({})
     const [response, setResponse] = useState("")
     const [submitting, setSubmitting] = useState(false)
+
     const feedbackHandler = async (e) => {
         e.preventDefault()
         setSubmitting(true)
@@ -16,13 +19,19 @@ const FeedbackForm = () => {
             if (response.status !== 200) {
                 throw new Error()
             }
+            logEvent(analytics, 'feedback_submitted', {feedback: feedback})
             setResponse("Thank you for your feedback. We will review it and take necessary action.")
             setSubmitting(false)
         } catch (error) {
+            logEvent(analytics, 'feedback_submission_failed', {feedback: feedback})
             setResponse("Oops! Something went wrong. Please try again.")
             setSubmitting(false)
         }
     }
+
+    useEffect(() => {
+        document.title = "Feedback | Unitastic"
+    }, [])
     return (
         <>
             <Navbar />
