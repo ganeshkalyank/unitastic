@@ -68,7 +68,7 @@ const CGPACalculator = () => {
                         }
                         <hr />
                         <button className="btn btn-primary rounded-5" onClick={calculateCGPA}>Calculate CGPA</button>
-                        <h4 className="text-center mt-3">Your CGPA is {cgpa.toFixed(4)}</h4>
+                        <h5 className="text-center mt-3">Your CGPA is {cgpa.toFixed(4)}</h5>
                     </div>
                 </div>
             </div>

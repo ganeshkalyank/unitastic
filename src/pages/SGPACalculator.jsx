@@ -77,7 +77,7 @@ const SGPACalculator = () => {
                         }
                         <hr />
                         <button className="btn btn-primary rounded-5" onClick={calculateSGPA}>Calculate</button>
-                        <h5 className="mt-3">Expected SGPA: {sgpa.toFixed(4)}</h5>
+                        <h5 className="text-center mt-3">Your SGPA is {sgpa.toFixed(4)}</h5>
                     </div>
                 </div>
             </div>
