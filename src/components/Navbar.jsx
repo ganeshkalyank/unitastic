@@ -21,6 +21,7 @@ const Navbar = () => {
                             </a>
                             <ul className="dropdown-menu text-center">
                                 <li><a className="dropdown-item" href="/sgpa">SGPA Calculator</a></li>
+                                <li><a className="dropdown-item" href="/cgpa">CGPA Calculator</a></li>
                                 <li><a className="dropdown-item" href="/externals">Expected Externals</a></li>
                                 <li><a className="dropdown-item" href="/attendance">Class Skippability</a></li>
                             </ul>

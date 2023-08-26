@@ -11,6 +11,7 @@ import { firebaseConfig } from './config'
 import ExpectedExternals from './pages/ExpectedExternals'
 import AttendanceCalculator from './pages/AttendanceCalculator'
 import SGPACalculator from './pages/SGPACalculator'
+import CGPACalculator from './pages/CGPACalculator'
 import Home from './pages/Home'
 import Semesters from './pages/Semesters'
 import Semester from './pages/Semester'
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
   { path: '/externals', element: <ExpectedExternals /> },
   { path: '/attendance', element: <AttendanceCalculator /> },
   { path: '/sgpa', element: <SGPACalculator /> },
+  { path: '/cgpa', element: <CGPACalculator /> },
   { path: '/contribute', element: <ContributionForm /> },
   { path: '/feedback', element: <FeedbackForm /> },
 ])

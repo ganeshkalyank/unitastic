@@ -64,8 +64,8 @@ const Home = () => {
                         <div className="col-lg-6">
                             <h2 className="services-title mt-5 mb-4">Utilities</h2>
                             <p className="services-text">
-                                Calculate your SGPA, find out how many classes you can skip, and much
-                                more with Unitastic's utilities.
+                                Calculate your SGPA, CGPA, find out how many classes you can skip,
+                                and much more with Unitastic's utilities.
                                 <br /> <br />
                                 Unitastic utilities are designed to make your university life easier
                                 by simplifying the bringing together all the tools you need in one place.
@@ -74,6 +74,7 @@ const Home = () => {
                                 using the feedback form.
                             </p>
                             <a href="/sgpa" className="btn btn-primary me-2 mb-2 rounded-5">SGPA Calculator</a>
+                            <a href="/cgpa" className="btn btn-primary me-2 mb-2 rounded-5">CGPA Calculator</a>
                             <a href="/attendance" className="btn btn-primary me-2 mb-2 rounded-5">Skippability Calculator</a>
                             <a href="/externals" className="btn btn-primary me-2 mb-2 rounded-5">Expected Externals Calculator</a>
                         </div>
