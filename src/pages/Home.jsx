@@ -68,7 +68,7 @@ const Home = () => {
                                 and much more with Unitastic's utilities.
                                 <br /> <br />
                                 Unitastic utilities are designed to make your university life easier
-                                by simplifying the bringing together all the tools you need in one place.
+                                by simplifying and bringing together all the tools you need in one place.
                                 <br /> <br />
                                 If you have any suggestions for new utilities, you can let us know
                                 using the feedback form.
