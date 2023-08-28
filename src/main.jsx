@@ -17,6 +17,7 @@ import Semesters from './pages/Semesters'
 import Semester from './pages/Semester'
 import ContributionForm from './pages/ContributionForm'
 import FeedbackForm from './pages/FeedbackForm'
+import GetEventTickets from './pages/studentverse/GetEventTickets'
 
 const app = initializeApp(firebaseConfig)
 const analytics = getAnalytics(app)
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
   { path: '/cgpa', element: <CGPACalculator /> },
   { path: '/contribute', element: <ContributionForm /> },
   { path: '/feedback', element: <FeedbackForm /> },
+  { path: '/studentverse/events', element: <GetEventTickets /> }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
