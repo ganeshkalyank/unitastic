@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
+import { logEvent } from "firebase/analytics"
+import { analytics } from "../../main"
 import { teamdcsCredentials } from "../../config"
-import Navbar from "../../components/Navbar"
-import Footer from "../../components/Footer"
 import "./GetEventTickets.css"
 import QRCode from "react-qr-code"
 
@@ -28,6 +28,7 @@ const GetEventTickets = () => {
                 throw new Error("No Tickets Found")
             }
             setTicketData(response.data.userTickets)
+            logEvent(analytics, 'get_event_tickets', response.data)
             setResponse("")
         } catch (error) {
             setTicketData([])
@@ -36,12 +37,17 @@ const GetEventTickets = () => {
             } else {
                 setResponse(error.message)
             }
+            logEvent(analytics, 'get_event_tickets_error', error.message)
         }
     }
 
+    useEffect(() => {
+        document.title = "Get Event Tickets | Unitastic"
+    }, [])
+
     return (
         <>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="container tickets-container">
             <div className="row d-flex justify-content-center p-3">
                 <div className="col-lg-6 container shadow bg-white p-3 rounded-3">
@@ -79,7 +85,7 @@ const GetEventTickets = () => {
                 </div>
             </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
         </>
     )
 }
