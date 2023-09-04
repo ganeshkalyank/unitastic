@@ -18,6 +18,8 @@ import Semester from './pages/Semester'
 import ContributionForm from './pages/ContributionForm'
 import FeedbackForm from './pages/FeedbackForm'
 import PageNotFound from './pages/PageNotFound'
+import Credits from './pages/Credits'
+import TermsandConditions from './pages/TermsandConditions'
 // import GetEventTickets from './pages/studentverse/GetEventTickets'
 
 const app = initializeApp(firebaseConfig)
@@ -36,6 +38,8 @@ const router = createBrowserRouter([
   { path: '/cgpa', element: <CGPACalculator /> },
   { path: '/contribute', element: <ContributionForm /> },
   { path: '/feedback', element: <FeedbackForm /> },
+  { path: '/credits', element: <Credits /> },
+  { path: '/terms', element: <TermsandConditions /> },
   // { path: '/studentverse/events', element: <GetEventTickets /> },
   { path: '*', element: <PageNotFound /> },
 ])

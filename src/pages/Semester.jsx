@@ -45,7 +45,7 @@ const Semester = () => {
                 </div>
             ): (
                 <div className="container semester-container">
-                    <h3 className="text-center">Select Subcategory</h3>
+                    <h3 className="text-center">Select Subject</h3>
                     <div className="row gy-2 mt-3">
                         {
                             depts.length > 0 ? (
