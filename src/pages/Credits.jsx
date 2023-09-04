@@ -1,3 +1,4 @@
+import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import "./Credits.css"
 
@@ -42,6 +43,7 @@ const Credits = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
