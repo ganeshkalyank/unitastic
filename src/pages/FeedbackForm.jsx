@@ -15,7 +15,7 @@ const FeedbackForm = () => {
         e.preventDefault()
         setSubmitting(true)
         try {
-            const response = await axios.post("https://formspree.io/f/xpzgdybl", feedback)
+            const response = await axios.post("https://api.ganeshkalyan.in/unitastic/feedback", feedback)
             if (response.status !== 200) {
                 throw new Error()
             }

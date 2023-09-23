@@ -14,7 +14,7 @@ const ContributionForm = () => {
         e.preventDefault()
         setSubmitting(true)
         try {
-            const response = await axios.post("https://formspree.io/f/xpzgdjwa", contribution)
+            const response = await axios.post("https://api.ganeshkalyan.in/unitastic/contribute", contribution)
             if (response.status !== 200) {
                 throw new Error()
             }
