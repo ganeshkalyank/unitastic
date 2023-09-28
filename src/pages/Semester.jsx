@@ -13,26 +13,25 @@ const Semester = () => {
 
     const { id } = useParams()
 
-    const getData = async () => {
-        const subjectsCollection = collection(db, "semesters", id, "subjects")
-        const q1 = query(subjectsCollection, orderBy("name"))
-        const subjectsSnapshot = await getDocs(q1)
-        const subjectsList = subjectsSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-        setSubjects(subjectsList)
-
-        const deptsCollection = collection(db, "semesters", id, "depts")
-        const q2 = query(deptsCollection, orderBy("name"))
-        const deptsSnapshot = await getDocs(q2)
-        const deptsList = deptsSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-        setDepts(deptsList)
-        
-        setLoading(false)
-    }
-
     useEffect(() => {
+        const getData = async () => {
+            const subjectsCollection = collection(db, "semesters", id, "subjects")
+            const q1 = query(subjectsCollection, orderBy("name"))
+            const subjectsSnapshot = await getDocs(q1)
+            const subjectsList = subjectsSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+            setSubjects(subjectsList)
+    
+            const deptsCollection = collection(db, "semesters", id, "depts")
+            const q2 = query(deptsCollection, orderBy("name"))
+            const deptsSnapshot = await getDocs(q2)
+            const deptsList = deptsSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+            setDepts(deptsList)
+            
+            setLoading(false)
+        }
         getData()
         document.title = "Semester | Unitastic"
-    }, [])
+    }, [id])
 
     return (
         <>
@@ -55,7 +54,7 @@ const Semester = () => {
                                             <div className="card-body">
                                                 <h5 className="card-title">{dept.name}</h5>
                                                 <p className="card-text">{dept.description}</p>
-                                                <a href={dept.url} target="_blank" className="btn btn-primary rounded-5">Select</a>
+                                                <a href={dept.url} target="_blank" rel="noreferrer" className="btn btn-primary rounded-5">Select</a>
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +66,7 @@ const Semester = () => {
                                             <div className="card-body">
                                                 <h5 className="card-title">{subject.name}</h5>
                                                 <p className="card-text">{subject.description}</p>
-                                                <a href={subject.url} target="_blank" className="btn btn-primary rounded-5">Select</a>
+                                                <a href={subject.url} target="_blank" rel="noreferrer" className="btn btn-primary rounded-5">Select</a>
                                             </div>
                                         </div>
                                     </div>

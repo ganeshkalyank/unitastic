@@ -5,6 +5,7 @@ import Footer from "../components/Footer"
 import library from "../assets/library.svg"
 import calculator from "../assets/calculator.svg"
 import Quote from "../components/Quote"
+import { Link } from "react-router-dom"
 
 const Home = () => {
     return (
@@ -25,7 +26,7 @@ const Home = () => {
                             Unitastic also provides you with all the materials you need for your
                             university life, be it notes, previous question papers, or even textbooks.
                         </p>
-                        <a href="/semesters" className="btn btn-primary rounded-5">Get Materials</a>
+                        <Link to="/semesters" className="btn btn-primary rounded-5">Get Materials</Link>
                     </div>
                     <div className="col-lg-6 d-flex justify-content-center">
                         <img src={collegestudents} className="img-fluid" alt="College Students" />
@@ -53,7 +54,7 @@ const Home = () => {
                                 If you find any discrepancies in the content, you can report it to us
                                 using the feedback form and we will take care of it.
                                 <br /> <br />
-                                <a href="/semesters" className="btn btn-primary rounded-5">Get Materials</a>
+                                <Link to="/semesters" className="btn btn-primary rounded-5">Get Materials</Link>
                             </p>
                         </div>
                     </div>
@@ -65,7 +66,7 @@ const Home = () => {
                             <h2 className="services-title mt-5 mb-4">Utilities</h2>
                             <p className="services-text">
                                 Calculate your SGPA, CGPA, find out how many classes you can skip,
-                                and much more with Unitastic's utilities.
+                                and much more with Unitastic&apos;s utilities.
                                 <br /> <br />
                                 Unitastic utilities are designed to make your university life easier
                                 by simplifying and bringing together all the tools you need in one place.
@@ -73,10 +74,10 @@ const Home = () => {
                                 If you have any suggestions for new utilities, you can let us know
                                 using the feedback form.
                             </p>
-                            <a href="/sgpa" className="btn btn-primary me-2 mb-2 rounded-5">SGPA Calculator</a>
-                            <a href="/cgpa" className="btn btn-primary me-2 mb-2 rounded-5">CGPA Calculator</a>
-                            <a href="/attendance" className="btn btn-primary me-2 mb-2 rounded-5">Skippability Calculator</a>
-                            <a href="/externals" className="btn btn-primary me-2 mb-2 rounded-5">Expected Externals Calculator</a>
+                            <Link to="/sgpa" className="btn btn-primary me-2 mb-2 rounded-5">SGPA Calculator</Link>
+                            <Link to="/cgpa" className="btn btn-primary me-2 mb-2 rounded-5">CGPA Calculator</Link>
+                            <Link to="/attendance" className="btn btn-primary me-2 mb-2 rounded-5">Skippability Calculator</Link>
+                            <Link to="/externals" className="btn btn-primary me-2 mb-2 rounded-5">Expected Externals Calculator</Link>
                         </div>
                         <div className="col-lg-6 d-none d-lg-flex justify-content-center">
                             <img src={calculator} className="img-fluid" alt="Calculator" />

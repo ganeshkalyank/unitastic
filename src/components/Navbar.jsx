@@ -1,29 +1,30 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow fixed-top bg-white">
             <div className="container-fluid">
-                <a href="/" className="navbar-brand">Unitastic</a>
+                <Link to="/" className="navbar-brand">Unitastic</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                     <FontAwesomeIcon icon={faBarsStaggered}/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarContent">
                     <ul className="navbar-nav text-center ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a href="/semesters" className="nav-link">Materials</a>
+                            <Link to="/semesters" className="nav-link">Materials</Link>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Utilities
                             </a>
                             <ul className="dropdown-menu text-center">
-                                <li><a className="dropdown-item" href="/sgpa">SGPA Calculator</a></li>
-                                <li><a className="dropdown-item" href="/cgpa">CGPA Calculator</a></li>
-                                <li><a className="dropdown-item" href="/externals">Expected Externals</a></li>
-                                <li><a className="dropdown-item" href="/attendance">Class Skippability</a></li>
+                                <li><Link className="dropdown-item" to="/sgpa">SGPA Calculator</Link></li>
+                                <li><Link className="dropdown-item" to="/cgpa">CGPA Calculator</Link></li>
+                                <li><Link className="dropdown-item" to="/externals">Expected Externals</Link></li>
+                                <li><Link className="dropdown-item" to="/attendance">Class Skippability</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
@@ -31,10 +32,10 @@ const Navbar = () => {
                                 Useful Links
                             </a>
                             <ul className="dropdown-menu text-center">
-                                <li><a className="dropdown-item" href="https://webstream.sastra.edu/sastrapwi/" target="_blank">Student Web Interface</a></li>
-                                <li><a className="dropdown-item" href="https://webstream.sastra.edu/sastraparentweb/" target="_blank">Parent Web Interface</a></li>
-                                <li><a className="dropdown-item" href="https://biometric.sastra.edu/" target="_blank">Hostel Leave Portal</a></li>
-                                <li><a className="dropdown-item" href="https://www.sastra.edu/downloads/menu/Academics/Academic_Calender_2023_24_TPJ.pdf" target="_blank">Academic Calendar</a></li>
+                                <li><a className="dropdown-item" href="https://webstream.sastra.edu/sastrapwi/" target="_blank" rel="noreferrer">Student Web Interface</a></li>
+                                <li><a className="dropdown-item" href="https://webstream.sastra.edu/sastraparentweb/" target="_blank" rel="noreferrer">Parent Web Interface</a></li>
+                                <li><a className="dropdown-item" href="https://biometric.sastra.edu/" target="_blank" rel="noreferrer">Hostel Leave Portal</a></li>
+                                <li><a className="dropdown-item" href="https://www.sastra.edu/downloads/menu/Academics/Academic_Calender_2023_24_TPJ.pdf" target="_blank" rel="noreferrer">Academic Calendar</a></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
@@ -42,8 +43,8 @@ const Navbar = () => {
                                 Archives
                             </a>
                             <ul className="dropdown-menu text-center">
-                                <li><a className="dropdown-item" href="https://materialbase.github.io/" target="_blank">Material Base</a></li>
-                                <li><a className="dropdown-item" href="https://linktr.ee/materialhub" target="_blank">Material Hub</a></li>
+                                <li><a className="dropdown-item" href="https://materialbase.github.io/" target="_blank" rel="noreferrer">Material Base</a></li>
+                                <li><a className="dropdown-item" href="https://linktr.ee/materialhub" target="_blank" rel="noreferrer">Material Hub</a></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
@@ -51,8 +52,8 @@ const Navbar = () => {
                                 Contribute
                             </a>
                             <ul className="dropdown-menu text-center dropdown-menu-end">
-                                <li><a className="dropdown-item" href="/contribute">Materials</a></li>
-                                <li><a className="dropdown-item" href="/feedback">Feedback</a></li>
+                                <li><Link className="dropdown-item" to="/contribute">Materials</Link></li>
+                                <li><Link className="dropdown-item" to="/feedback">Feedback</Link></li>
                             </ul>
                         </li>
                     </ul>

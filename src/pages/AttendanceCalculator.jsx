@@ -38,7 +38,7 @@ const AttendanceCalculator = () => {
                         <button className="btn btn-primary rounded-5" onClick={calculateCanBunk}>Calculate</button>
                         <hr />
                         {
-                            canBunk > 0 ? <h5 className="text-center">You can skip {canBunk} classes</h5> : <h5 className="text-center">You can't skip any classes</h5>
+                            canBunk > 0 ? <h5 className="text-center">You can skip {canBunk} classes</h5> : <h5 className="text-center">You can&apos;t skip any classes</h5>
                         }
                     </div>
                 </div>

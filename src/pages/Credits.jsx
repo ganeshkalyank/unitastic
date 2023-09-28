@@ -11,7 +11,7 @@ const Credits = () => {
                 <div className="row d-flex justify-content-center">
                     <div className="col-lg-8">
                         <section className="my-3">
-                            We would like to acknowledge and express our gratitude to the following individuals, organizations, and resources that have contributed to the development of "Unitastic."
+                            We would like to acknowledge and express our gratitude to the following individuals, organizations, and resources that have contributed to the development of &quot;Unitastic.&quot;
                         </section>
                         <section>
                             <h5>Development Frameworks and Libraries:</h5>
@@ -35,10 +35,10 @@ const Credits = () => {
                         </section>
                         <section>
                             <h5>Feedback and Support:</h5>
-                            <p>Our users have played a vital role in shaping "Unitastic." We appreciate all the feedback, suggestions, and support from our user community.</p>
+                            <p>Our users have played a vital role in shaping &quot;Unitastic.&quot; We appreciate all the feedback, suggestions, and support from our user community.</p>
                         </section>
                         <section className="mt-3">
-                            <p>If you have any questions, suggestions, or feedback, please don't hesitate to reach out to us at <a href="mailto:unitastic@outlook.com">unitastic@outlook.com</a> or by filling the feedback form.</p>
+                            <p>If you have any questions, suggestions, or feedback, please don&apos;t hesitate to reach out to us at <a href="mailto:unitastic@outlook.com">unitastic@outlook.com</a> or by filling the feedback form.</p>
                         </section>
                     </div>
                 </div>

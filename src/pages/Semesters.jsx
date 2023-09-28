@@ -4,6 +4,7 @@ import { db } from "../main"
 import Navbar from "../components/Navbar"
 import "./Semesters.css"
 import Footer from "../components/Footer"
+import { Link } from "react-router-dom"
 
 const Semesters = () => {
     const [semesters, setSemesters] = useState([]);
@@ -44,7 +45,7 @@ const Semesters = () => {
                                         <div className="card-body">
                                             <h5 className="card-title">{semester.name}</h5>
                                             <p className="card-text">{semester.description}</p>
-                                            <a href={`/semesters/${semester.id}`} className="btn btn-primary rounded-5">Select</a>
+                                            <Link to={`/semesters/${semester.id}`} className="btn btn-primary rounded-5">Select</Link>
                                         </div>
                                     </div>
                                 </div>
