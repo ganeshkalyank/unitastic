@@ -20,6 +20,7 @@ import FeedbackForm from './pages/FeedbackForm'
 import PageNotFound from './pages/PageNotFound'
 import Credits from './pages/Credits'
 import TermsandConditions from './pages/TermsandConditions'
+import SGPAforCGPA from './pages/SGPAforCGPA'
 // import GetEventTickets from './pages/studentverse/GetEventTickets'
 
 const app = initializeApp(firebaseConfig)
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
   { path: '/attendance', element: <AttendanceCalculator /> },
   { path: '/sgpa', element: <SGPACalculator /> },
   { path: '/cgpa', element: <CGPACalculator /> },
+  { path: '/targetcgpa', element: <SGPAforCGPA /> },
   { path: '/contribute', element: <ContributionForm /> },
   { path: '/feedback', element: <FeedbackForm /> },
   { path: '/credits', element: <Credits /> },

@@ -76,6 +76,7 @@ const Home = () => {
                             </p>
                             <Link to="/sgpa" className="btn btn-primary me-2 mb-2 rounded-5">SGPA Calculator</Link>
                             <Link to="/cgpa" className="btn btn-primary me-2 mb-2 rounded-5">CGPA Calculator</Link>
+                            <Link to="/targetcgpa" className="btn btn-primary me-2 mb-2 rounded-5">Required SGPA Calculator</Link>
                             <Link to="/attendance" className="btn btn-primary me-2 mb-2 rounded-5">Skippability Calculator</Link>
                             <Link to="/externals" className="btn btn-primary me-2 mb-2 rounded-5">Expected Externals Calculator</Link>
                         </div>
