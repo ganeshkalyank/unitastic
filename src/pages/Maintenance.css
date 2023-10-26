@@ -1,0 +1,24 @@
+.maintenance-container {
+    margin-top: 10vh;
+    min-height: 60vh;
+}
+
+.maintenance-title {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--accent);
+    font-family: 'Pacifico', cursive;
+}
+
+.maintenance-img {
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .maintenance-title {
+        font-size: 1.5rem;
+    }
+    .maintenance-img {
+        width: 100%;
+    }
+}
