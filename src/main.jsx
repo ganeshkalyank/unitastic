@@ -21,7 +21,6 @@ import PageNotFound from './pages/PageNotFound'
 import Credits from './pages/Credits'
 import TermsandConditions from './pages/TermsandConditions'
 import SGPAforCGPA from './pages/SGPAforCGPA'
-// import GetEventTickets from './pages/studentverse/GetEventTickets'
 
 const app = initializeApp(firebaseConfig)
 const analytics = getAnalytics(app)
@@ -42,7 +41,6 @@ const router = createBrowserRouter([
   { path: '/feedback', element: <FeedbackForm /> },
   { path: '/credits', element: <Credits /> },
   { path: '/terms', element: <TermsandConditions /> },
-  // { path: '/studentverse/events', element: <GetEventTickets /> },
   { path: '*', element: <PageNotFound /> },
 ])
 
