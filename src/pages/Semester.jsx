@@ -10,12 +10,18 @@ import { Helmet } from "react-helmet"
 const Semester = () => {
     const [depts, setDepts] = useState([])
     const [subjects, setSubjects] = useState([])
+    const [semester, setSemester] = useState("Semester")
     const [loading, setLoading] = useState(true)
 
     const { id } = useParams()
 
     useEffect(() => {
         const getData = async () => {
+            const semesterRef = collection(db, "semesters")
+            const semesterSnapshot = await getDocs(semesterRef)
+            const semesterList = semesterSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })).filter(semester => semester.id === id)
+            setSemester(semesterList[0].name)
+
             const subjectsCollection = collection(db, "semesters", id, "subjects")
             const q1 = query(subjectsCollection, orderBy("name"))
             const subjectsSnapshot = await getDocs(q1)
@@ -36,7 +42,7 @@ const Semester = () => {
     return (
         <>
             <Helmet>
-                <title>Semester | Unitastic</title>
+                <title>{semester} | Unitastic</title>
                 <link rel="canonical" href={`https://unitastic.netlify.app/semesters/${id}`} />
             </Helmet>
             <Navbar />
