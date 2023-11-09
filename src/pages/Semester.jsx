@@ -5,6 +5,7 @@ import { db } from "../main"
 import Navbar from "../components/Navbar"
 import "./Semester.css"
 import Footer from "../components/Footer"
+import { Helmet } from "react-helmet"
 
 const Semester = () => {
     const [depts, setDepts] = useState([])
@@ -30,11 +31,14 @@ const Semester = () => {
             setLoading(false)
         }
         getData()
-        document.title = "Semester | Unitastic"
     }, [id])
 
     return (
         <>
+            <Helmet>
+                <title>Semester | Unitastic</title>
+                <link rel="canonical" href={`https://unitastic.netlify.app/semesters/${id}`} />
+            </Helmet>
             <Navbar />
             { loading ? (
                 <div className="container semester-container d-flex justify-content-center">

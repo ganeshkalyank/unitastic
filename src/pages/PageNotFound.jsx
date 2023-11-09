@@ -2,10 +2,14 @@ import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import notfound from "../assets/notfound.svg"
 import "./PageNotFound.css"
+import { Helmet } from "react-helmet"
 
 const PageNotFound = () => {
     return (
         <>
+        <Helmet>
+            <title>Page Not Found | Unitastic</title>
+        </Helmet>
         <Navbar />
         <div className="container notfound-container">
             <div className="row d-flex align-items-center justify-content-center">

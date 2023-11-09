@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar"
 import "./Semesters.css"
 import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet"
 
 const Semesters = () => {
     const [semesters, setSemesters] = useState([]);
@@ -22,11 +23,14 @@ const Semesters = () => {
 
     useEffect(() => {
         getSemesters()
-        document.title = "Semesters | Unitastic"
     }, [])
 
     return (
         <>
+            <Helmet>
+                <title>Semesters | Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/semesters" />
+            </Helmet>
             <Navbar />
             { loading ? (
                 <div className="container semesters-container d-flex justify-content-center">

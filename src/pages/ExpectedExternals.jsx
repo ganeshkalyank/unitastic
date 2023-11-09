@@ -1,9 +1,10 @@
 import { logEvent } from "firebase/analytics"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import "./ExpectedExternals.css"
+import { Helmet } from "react-helmet"
 
 const ExpectedExternals = () => {
     const [externals, setExternals] = useState({})
@@ -32,12 +33,12 @@ const ExpectedExternals = () => {
         logEvent(analytics, 'calculate_externals', {internals: internals})
     }
 
-    useEffect(() => {
-        document.title = "Expected Externals | Unitastic"
-    }, [])
-
     return (
         <>
+            <Helmet>
+                <title>Expected Externals | Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/externals" />
+            </Helmet>
             <Navbar />
             <div className="container externals-container">
                 <div className="row d-flex justify-content-center p-3 mt-5">

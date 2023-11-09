@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import axios from "axios"
 import { logEvent } from "firebase/analytics"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 import "./ContributionForm.css"
 import Footer from "../components/Footer"
+import { Helmet } from "react-helmet"
 
 const ContributionForm = () => {
     const [contribution, setContribution] = useState({})
@@ -28,12 +29,12 @@ const ContributionForm = () => {
         }
     }
 
-    useEffect(() => {
-        document.title = "Contribute | Unitastic"
-    }, [])
-
     return (
         <>
+            <Helmet>
+                <title>Contribute | Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/contribute" />
+            </Helmet>
             <Navbar />
             <div className="container contribution-form">
                 <div className="row d-flex justify-content-center p-3">

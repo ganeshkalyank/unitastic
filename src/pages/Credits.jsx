@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import "./Credits.css"
@@ -5,6 +6,10 @@ import "./Credits.css"
 const Credits = () => {
     return (
         <>
+            <Helmet>
+                <title>Credits | Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/credits" />
+            </Helmet>
             <Navbar />
             <div className="container credits-container">
                 <h3 className="text-center">Credits</h3>

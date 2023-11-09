@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import axios from "axios"
 import { logEvent } from "firebase/analytics"
+import { Helmet } from "react-helmet"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -29,11 +30,12 @@ const FeedbackForm = () => {
         }
     }
 
-    useEffect(() => {
-        document.title = "Feedback | Unitastic"
-    }, [])
     return (
         <>
+            <Helmet>
+                <title>Feedback | Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/feedback" />
+            </Helmet>
             <Navbar />
             <div className="container feedback-form">
                 <div className="row d-flex justify-content-center p-3">

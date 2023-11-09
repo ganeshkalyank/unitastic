@@ -1,9 +1,10 @@
 import { logEvent } from "firebase/analytics"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import "./AttendanceCalculator.css"
+import { Helmet } from "react-helmet"
 
 const AttendanceCalculator = () => {
     const [credits, setCredits] = useState(0)
@@ -15,12 +16,12 @@ const AttendanceCalculator = () => {
         logEvent(analytics, 'calculated_attendance', {credits: credits, bunked: bunked, canBunk: canBunk})
     }
 
-    useEffect(() => {
-        document.title = "Class Skippability | Unitastic"
-    }, [])
-
     return (
         <>
+            <Helmet>
+                <title>Class Skippability | Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/attendance" />
+            </Helmet>
             <Navbar />
             <div className="container attendance-container">
                 <div className="row d-flex justify-content-center p-3 mt-5">

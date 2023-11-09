@@ -1,11 +1,12 @@
 import { logEvent } from "firebase/analytics"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { analytics } from "../main"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import "./CGPACalculator.css"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import { Helmet } from "react-helmet"
 
 const CGPACalculator = () => {
     const [semesters, setSemesters] = useState([])
@@ -26,12 +27,12 @@ const CGPACalculator = () => {
         logEvent(analytics, 'calculated_cgpa', {semesters: semesters, cgpa: cgpa})
     }
 
-    useEffect(() => {
-        document.title = "CGPA Calculator | Unitastic"
-    }, [])
-
     return (
         <>
+            <Helmet>
+                <title>CGPA Calculator | Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/cgpa" />
+            </Helmet>
             <Navbar />
             <div className="container cgpa-container">
                 <div className="row d-flex justify-content-center p-3">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import "./TermsandConditions.css"
@@ -5,6 +6,10 @@ import "./TermsandConditions.css"
 const TermsandConditions = () => {
     return (
         <>
+        <Helmet>
+            <title>Terms and Conditions | Unitastic</title>
+            <link rel="canonical" href="https://unitastic.netlify.app/terms" />
+        </Helmet>
         <Navbar />
         <div className="container terms-container">
             <h3 className="text-center">Terms and Conditions</h3>

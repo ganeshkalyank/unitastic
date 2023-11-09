@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { logEvent } from "firebase/analytics"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import Footer from "../components/Footer"
 import "./SGPACalculator.css"
+import { Helmet } from "react-helmet"
 
 const SGPACalculator = () => {
     const [subjects, setSubjects] = useState([])
@@ -27,12 +28,12 @@ const SGPACalculator = () => {
         logEvent(analytics, 'calculated_sgpa', {subjects: subjects, sgpa: sgpa})
     }
 
-    useEffect(() => {
-        document.title = "SGPA Calculator | Unitastic"
-    }, [])
-
     return (
         <>
+            <Helmet>
+                <title>SGPA Calculator | Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/sgpa" />
+            </Helmet>
             <Navbar />
             <div className="container sgpa-container">
                 <div className="row d-flex justify-content-center p-3">

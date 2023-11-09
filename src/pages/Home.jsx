@@ -6,8 +6,13 @@ import library from "../assets/library.svg"
 import calculator from "../assets/calculator.svg"
 import Quote from "../components/Quote"
 import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet"
 
 const Home = () => {
+    <Helmet>
+        <title>Unitastic</title>
+        <link rel="canonical" href="https://unitastic.netlify.app/" />
+    </Helmet>
     return (
         <>
             <Navbar />

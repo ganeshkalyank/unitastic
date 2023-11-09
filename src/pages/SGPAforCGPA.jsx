@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { logEvent } from "firebase/analytics"
 import { analytics } from "../main"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import "./SGPAforCGPA.css"
+import { Helmet } from "react-helmet"
 
 const SGPAforCGPA = () => {
 
@@ -20,12 +21,12 @@ const SGPAforCGPA = () => {
         logEvent(analytics, 'calculated_sgpa', {cgpaGoal: cgpaGoal, currentCGPA: currentCGPA, currentCredits: currentCredits, pastCredits: pastCredits, sgpa: sgpa})
     }
 
-    useEffect(() => {
-        document.title = "Required SGPA Calculator | Unitastic"
-    }, [])
-
     return (
         <>
+            <Helmet>
+                <title>Required SGPA Calculator | Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/targetcgpa" />
+            </Helmet>
             <Navbar />
             <div className="container sgforcg-container">
                 <div className="row d-flex justify-content-center p-3">
