@@ -1,57 +1,57 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/</loc>
+		<loc>https://unitastic.netlify.app/</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/semesters</loc>
+		<loc>https://unitastic.netlify.app/semesters</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/sgpa</loc>
+		<loc>https://unitastic.netlify.app/sgpa</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/cgpa</loc>
+		<loc>https://unitastic.netlify.app/cgpa</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/targetcgpa</loc>
+		<loc>https://unitastic.netlify.app/targetcgpa</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/externals</loc>
+		<loc>https://unitastic.netlify.app/externals</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/attendance</loc>
+		<loc>https://unitastic.netlify.app/attendance</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/contribute</loc>
+		<loc>https://unitastic.netlify.app/contribute</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/feedback</loc>
+		<loc>https://unitastic.netlify.app/feedback</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/terms</loc>
+		<loc>https://unitastic.netlify.app/terms</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.ganeshkalyan.in/credits</loc>
+		<loc>https://unitastic.netlify.app/credits</loc>
 		<lastmod>2023-10-28T18:34:19+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
