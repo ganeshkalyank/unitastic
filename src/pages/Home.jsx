@@ -7,14 +7,38 @@ import calculator from "../assets/calculator.svg"
 import Quote from "../components/Quote"
 import { Link } from "react-router-dom"
 import { Helmet } from "react-helmet"
+import { useEffect } from "react"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.min.css"
 
 const Home = () => {
-    <Helmet>
-        <title>Unitastic</title>
-        <link rel="canonical" href="https://unitastic.netlify.app/" />
-    </Helmet>
+
+    const AndroidToast = () => (
+        <div className="toast-content text-center">
+            Unitastic is now available for Android! Download it&nbsp;
+            <a href="https://www.mediafire.com/file/by5udrr40tl2z16/Unitastic-v0.2.3.apk/file" target="_blank" rel="noreferrer">here</a>.
+        </div>
+    )
+
+    const notify = () => toast(
+        <AndroidToast />,
+        {
+            position: toast.POSITION.BOTTOM_CENTER,
+            autoClose: false,
+        }
+    );
+
+    useEffect(() => {
+        notify()
+    }, [])
+
     return (
         <>
+            <Helmet>
+                <title>Unitastic</title>
+                <link rel="canonical" href="https://unitastic.netlify.app/" />
+            </Helmet>
+            <ToastContainer />
             <Navbar />
             <div className="container landing">
                 <div className="row gy-5 landing-inner">
