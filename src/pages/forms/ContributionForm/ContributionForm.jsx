@@ -1,11 +1,9 @@
 import { useState } from "react"
-import axios from "axios"
-import { logEvent } from "firebase/analytics"
-import { analytics } from "../main"
-import Navbar from "../components/Navbar"
+import Navbar from "../../../components/Navbar/Navbar"
 import "./ContributionForm.css"
-import Footer from "../components/Footer"
+import Footer from "../../../components/Footer/Footer"
 import { Helmet } from "react-helmet"
+import { postContribution } from "../../../apis/contribution"
 
 const ContributionForm = () => {
     const [contribution, setContribution] = useState({})
@@ -14,19 +12,9 @@ const ContributionForm = () => {
     const contributeHandler = async (e) => {
         e.preventDefault()
         setSubmitting(true)
-        try {
-            const response = await axios.post("https://api.ganeshkalyan.in/unitastic/contribute", contribution)
-            if (response.status !== 200) {
-                throw new Error()
-            }
-            logEvent(analytics, 'contribution_submitted', {contribution: contribution})
-            setResponse("Thank you for your contribution. We will review it and add it to our database.")
-            setSubmitting(false)
-        } catch (error) {
-            logEvent(analytics, 'contribution_submission_failed', {contribution: contribution})
-            setResponse("Oops! Something went wrong. Please try again.")
-            setSubmitting(false)
-        }
+        const response = await postContribution(contribution)
+        setResponse(response)
+        setSubmitting(false)
     }
 
     return (
@@ -76,7 +64,7 @@ const ContributionForm = () => {
                             </div>
                             <p className="form-text">* Fields marked with an asterisk are mandatory.</p>
                             <button className={"btn btn-primary rounded-5 mb-3"+(submitting?" disabled":"")} type="submit">{ submitting ? "Submitting..." : "Submit" }</button>
-                            <div className="response">{response}</div>
+                            <div className="text-center mt-3">{response}</div>
                         </form>
                     </div>
                 </div>

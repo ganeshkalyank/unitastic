@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { collection, getDocs, query, orderBy } from "firebase/firestore"
-import { db } from "../main"
-import Navbar from "../components/Navbar"
-import "./Semester.css"
-import Footer from "../components/Footer"
 import { Helmet } from "react-helmet"
+import { db } from "../../../firebase"
+import Navbar from "../../../components/Navbar/Navbar"
+import Footer from "../../../components/Footer/Footer"
+import "./Semester.css"
 
 const Semester = () => {
     const [depts, setDepts] = useState([])

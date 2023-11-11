@@ -1,30 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { initializeApp } from 'firebase/app'
-import { getAnalytics, logEvent } from 'firebase/analytics'
-import { getFirestore } from 'firebase/firestore'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import './main.css'
-import { firebaseConfig } from './config'
-import ExpectedExternals from './pages/ExpectedExternals'
-import AttendanceCalculator from './pages/AttendanceCalculator'
-import SGPACalculator from './pages/SGPACalculator'
-import CGPACalculator from './pages/CGPACalculator'
+import ExpectedExternals from './pages/utilities/ExpectedExternals/ExpectedExternals'
+import AttendanceCalculator from './pages/utilities/AttendanceCalculator/AttendanceCalculator'
+import SGPACalculator from './pages/utilities/SGPACalculator/SGPACalculator'
+import CGPACalculator from './pages/utilities/CGPACalculator/CGPACalculator'
 import Home from './pages/Home'
-import Semesters from './pages/Semesters'
-import Semester from './pages/Semester'
-import ContributionForm from './pages/ContributionForm'
-import FeedbackForm from './pages/FeedbackForm'
-import PageNotFound from './pages/PageNotFound'
-import Credits from './pages/Credits'
-import TermsandConditions from './pages/TermsandConditions'
-import SGPAforCGPA from './pages/SGPAforCGPA'
-
-const app = initializeApp(firebaseConfig)
-const analytics = getAnalytics(app)
-const db = getFirestore(app)
+import Semesters from './pages/materials/Semesters/Semesters'
+import Semester from './pages/materials/Semester/Semester'
+import ContributionForm from './pages/forms/ContributionForm/ContributionForm'
+import FeedbackForm from './pages/forms/FeedbackForm/FeedbackForm'
+import PageNotFound from './pages/helpers/PageNotFound/PageNotFound'
+import Credits from './pages/info/Credits/Credits'
+import TermsandConditions from './pages/info/TermsandConditions/TermsandConditions'
+import SGPAforCGPA from './pages/utilities/SGPAforCGPA/SGPAforCGPA'
+import { logEvent } from 'firebase/analytics'
+import { analytics } from './firebase'
 
 logEvent(analytics, 'root_opened')
 
@@ -49,5 +43,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </React.StrictMode>,
 )
-
-export { analytics, db }

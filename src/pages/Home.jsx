@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar/Navbar"
 import "./Home.css"
 import collegestudents from "../assets/collegestudents.svg"
-import Footer from "../components/Footer"
+import Footer from "../components/Footer/Footer"
 import library from "../assets/library.svg"
 import calculator from "../assets/calculator.svg"
-import Quote from "../components/Quote"
+import Quote from "../components/Quote/Quote"
 import { Link } from "react-router-dom"
 import { Helmet } from "react-helmet"
 import { useEffect } from "react"
@@ -26,7 +26,7 @@ const Home = () => {
             position: toast.POSITION.BOTTOM_CENTER,
             autoClose: false,
         }
-    );
+    )
 
     useEffect(() => {
         notify()

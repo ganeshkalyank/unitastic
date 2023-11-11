@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { logEvent } from "firebase/analytics"
-import { analytics } from "../main"
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import { analytics } from "../../../firebase"
+import Navbar from "../../../components/Navbar/Navbar"
+import Footer from "../../../components/Footer/Footer"
 import "./SGPAforCGPA.css"
 import { Helmet } from "react-helmet"
 
@@ -60,7 +60,7 @@ const SGPAforCGPA = () => {
             </div>
             <Footer />
         </>
-    );
+    )
 }
 
 export default SGPAforCGPA

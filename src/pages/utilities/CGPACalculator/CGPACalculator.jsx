@@ -1,11 +1,11 @@
 import { logEvent } from "firebase/analytics"
 import { useState } from "react"
-import { analytics } from "../main"
+import { analytics } from "../../../firebase"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import "./CGPACalculator.css"
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import Navbar from "../../../components/Navbar/Navbar"
+import Footer from "../../../components/Footer/Footer"
 import { Helmet } from "react-helmet"
 
 const CGPACalculator = () => {

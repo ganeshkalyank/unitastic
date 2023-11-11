@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet"
-import notfound from "../assets/notfound.svg"
+import notfound from "../../assets/notfound.svg"
 import "./Maintenance.css"
 
 const Maintenance = () => {
@@ -17,7 +17,7 @@ const Maintenance = () => {
                 <h1 className="maintenance-title text-center">Under Maintenance!</h1>
             </div>
         </>
-    );
+    )
 }
 
-export default Maintenance;
+export default Maintenance

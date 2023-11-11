@@ -1,17 +1,12 @@
 import { useEffect, useState } from 'react'
+import { getRandomInspirationalQuote } from '../../apis/quote'
 import './Quote.css'
 
 const Quote = () => {
     const [quote, setQuote] = useState({})
 
-    const fetchQuote = async () => {
-        const response = await fetch("https://api.quotable.io/random?tags=inspirational")
-        const data = await response.json()
-        setQuote(data)
-    }
-
     useEffect(() => {
-        fetchQuote()
+        getRandomInspirationalQuote().then(quote => setQuote(quote))
     }, [])
 
     return (
@@ -28,7 +23,7 @@ const Quote = () => {
                 </figure>
             </div>
         </div>
-    );
+    )
 }
 
 export default Quote

@@ -1,28 +1,23 @@
 import { useState, useEffect } from "react"
-import { collection, getDocs, query, orderBy } from "firebase/firestore"
-import { db } from "../main"
-import Navbar from "../components/Navbar"
-import "./Semesters.css"
-import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
 import { Helmet } from "react-helmet"
+import { getSemesters } from "../../../apis/materials"
+import Navbar from "../../../components/Navbar/Navbar"
+import Footer from "../../../components/Footer/Footer"
+import "./Semesters.css"
 
 const Semesters = () => {
-    const [semesters, setSemesters] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [semesters, setSemesters] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    const getSemesters = async () => {
-        const semestersRef = collection(db, "semesters")
-        const q = query(semestersRef, orderBy("name"))
-        const semestersSnapshot = await getDocs(q)
-        const semestersList = semestersSnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+    const getSemesterData = async () => {
+        const semestersList = await getSemesters()
         setSemesters(semestersList)
-
         setLoading(false)
     }
 
     useEffect(() => {
-        getSemesters()
+        getSemesterData()
     }, [])
 
     return (

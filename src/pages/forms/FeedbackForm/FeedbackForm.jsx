@@ -1,11 +1,9 @@
 import { useState } from "react"
-import axios from "axios"
-import { logEvent } from "firebase/analytics"
 import { Helmet } from "react-helmet"
-import { analytics } from "../main"
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import Navbar from "../../../components/Navbar/Navbar"
+import Footer from "../../../components/Footer/Footer"
 import "./FeedbackForm.css"
+import { postFeedback } from "../../../apis/contribution"
 
 const FeedbackForm = () => {
     const [feedback, setFeedback] = useState({})
@@ -15,19 +13,9 @@ const FeedbackForm = () => {
     const feedbackHandler = async (e) => {
         e.preventDefault()
         setSubmitting(true)
-        try {
-            const response = await axios.post("https://api.ganeshkalyan.in/unitastic/feedback", feedback)
-            if (response.status !== 200) {
-                throw new Error()
-            }
-            logEvent(analytics, 'feedback_submitted', {feedback: feedback})
-            setResponse("Thank you for your feedback. We will review it and take necessary action.")
-            setSubmitting(false)
-        } catch (error) {
-            logEvent(analytics, 'feedback_submission_failed', {feedback: feedback})
-            setResponse("Oops! Something went wrong. Please try again.")
-            setSubmitting(false)
-        }
+        const response = await postFeedback(feedback)
+        setResponse(response)
+        setSubmitting(false)
     }
 
     return (

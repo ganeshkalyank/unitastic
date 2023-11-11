@@ -1,6 +1,6 @@
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
-import notfound from "../assets/notfound.svg"
+import Footer from "../../../components/Footer/Footer"
+import Navbar from "../../../components/Navbar/Navbar"
+import notfound from "../../../assets/notfound.svg"
 import "./PageNotFound.css"
 import { Helmet } from "react-helmet"
 
@@ -23,7 +23,7 @@ const PageNotFound = () => {
         </div>
         <Footer />
         </>
-    );
+    )
 }
 
 export default PageNotFound

@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { logEvent } from "firebase/analytics"
-import { analytics } from "../main"
-import Navbar from "../components/Navbar"
+import { analytics } from "../../../firebase"
+import Navbar from "../../../components/Navbar/Navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
-import Footer from "../components/Footer"
+import Footer from "../../../components/Footer/Footer"
 import "./SGPACalculator.css"
 import { Helmet } from "react-helmet"
 
@@ -84,7 +84,7 @@ const SGPACalculator = () => {
             </div>
             <Footer />
         </>
-    );
+    )
 }
 
 export default SGPACalculator
