@@ -16,7 +16,7 @@ const Home = () => {
     const AndroidToast = () => (
         <div className="toast-content text-center">
             Unitastic is now available for Android! Download it&nbsp;
-            <a href="https://1drv.ms/u/s!AqPn_d7bfTh2bPymEqCduUZeojU?e=oSz2n8" target="_blank" rel="noreferrer">here</a>.
+            <a href="https://1drv.ms/u/s!AqPn_d7bfTh2cnjPYfnfxXwbC2c?e=gS4vKo" target="_blank" rel="noreferrer">here</a>.
         </div>
     )
 
