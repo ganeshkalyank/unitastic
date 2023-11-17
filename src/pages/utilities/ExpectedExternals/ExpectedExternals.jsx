@@ -1,37 +1,12 @@
-import { logEvent } from "firebase/analytics"
 import { useState } from "react"
-import { analytics } from "../../../firebase"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import "./ExpectedExternals.css"
 import { Helmet } from "react-helmet"
+import { calculateExternals } from "../../../utils/calculators"
 
 const ExpectedExternals = () => {
     const [externals, setExternals] = useState({})
-
-    const calculateExternals = (internals) => {
-        if (internals > 50) {
-            setExternals({
-                "S": "NA",
-                "A+": "NA",
-                "A": "NA",
-                "B": "NA",
-                "C": "NA",
-                "D": "NA"
-            })
-            return
-        }
-        const cutoff = {"S": 91, "A+": 86, "A": 75, "B": 66, "C": 55, "D": 50}
-        setExternals({
-            "S": (cutoff["S"] - internals) * 2,
-            "A+": (cutoff["A+"] - internals) * 2,
-            "A": (cutoff["A"] - internals) * 2,
-            "B": (cutoff["B"] - internals) * 2,
-            "C": (cutoff["C"] - internals) * 2,
-            "D": (cutoff["D"] - internals) * 2
-        })
-        logEvent(analytics, 'calculate_externals', {internals: internals})
-    }
 
     return (
         <>
@@ -47,7 +22,7 @@ const ExpectedExternals = () => {
                         <p>Calculate the externals marks required to get each overall grade based on internal marks.</p>
                         <hr />
                         <div className="form-floating mb-3">
-                            <input type="text" className="form-control" id="internals" placeholder="." onChange={(e) => calculateExternals(e.target.value)} />
+                            <input type="text" className="form-control" id="internals" placeholder="." onChange={(e) => setExternals(calculateExternals(e.target.value))} />
                             <label htmlFor="internals">Internals</label>
                         </div>
                         <hr />

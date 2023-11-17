@@ -1,10 +1,9 @@
 import { useState } from "react"
-import { logEvent } from "firebase/analytics"
-import { analytics } from "../../../firebase"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import "./SGPAforCGPA.css"
 import { Helmet } from "react-helmet"
+import { calculateSGPAForCGPA } from "../../../utils/calculators"
 
 const SGPAforCGPA = () => {
 
@@ -13,13 +12,6 @@ const SGPAforCGPA = () => {
     const [currentCredits, setCurrentCredits] = useState(0)
     const [pastCredits, setPastCredits] = useState(0)
     const [sgpa, setSGPA] = useState(0.0)
-
-    const calculateSGPA = () => {
-        const x = cgpaGoal*(currentCredits+pastCredits)
-        const y = currentCGPA*pastCredits
-        setSGPA((x-y)/currentCredits)
-        logEvent(analytics, 'calculated_sgpa', {cgpaGoal: cgpaGoal, currentCGPA: currentCGPA, currentCredits: currentCredits, pastCredits: pastCredits, sgpa: sgpa})
-    }
 
     return (
         <>
@@ -51,7 +43,7 @@ const SGPAforCGPA = () => {
                             <label htmlFor="pastcredits">Credits till Last Semester</label>
                         </div>
                         <hr />
-                        <button className="btn btn-primary rounded-5" onClick={calculateSGPA}>Calculate</button>
+                        <button className="btn btn-primary rounded-5" onClick={() => setSGPA(calculateSGPAForCGPA(cgpaGoal, currentCredits, pastCredits, currentCGPA))}>Calculate</button>
                         <h5 className="text-center mt-3">
                             { sgpa <= 10 && sgpa >=0 ? "Required SGPA is "+sgpa.toFixed(4) : "Not Achievable" }
                         </h5>

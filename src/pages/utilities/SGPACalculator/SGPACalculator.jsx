@@ -1,12 +1,11 @@
 import { useState } from "react"
-import { logEvent } from "firebase/analytics"
-import { analytics } from "../../../firebase"
 import Navbar from "../../../components/Navbar/Navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import Footer from "../../../components/Footer/Footer"
 import "./SGPACalculator.css"
 import { Helmet } from "react-helmet"
+import { calculateSGPA } from "../../../utils/calculators"
 
 const SGPACalculator = () => {
     const [subjects, setSubjects] = useState([])
@@ -14,18 +13,6 @@ const SGPACalculator = () => {
 
     const addSubject = () => {
         setSubjects([...subjects, { credits: 0, grade: "S" }])
-    }
-
-    const calculateSGPA = () => {
-        let totalCredits = 0
-        let totalPoints = 0
-        const grades = {"S": 10, "A+": 9, "A": 8, "B": 7, "C": 6, "D": 5, "F": 0}
-        subjects.forEach(subject => {
-            totalCredits += parseInt(subject.credits)
-            totalPoints += parseInt(subject.credits) * grades[subject.grade]
-        })
-        setSGPA(totalPoints / totalCredits)
-        logEvent(analytics, 'calculated_sgpa', {subjects: subjects, sgpa: sgpa})
     }
 
     return (
@@ -77,7 +64,7 @@ const SGPACalculator = () => {
                             })
                         }
                         <hr />
-                        <button className="btn btn-primary rounded-5" onClick={calculateSGPA}>Calculate</button>
+                        <button className="btn btn-primary rounded-5" onClick={() => setSGPA(calculateSGPA(subjects))}>Calculate</button>
                         <h5 className="text-center mt-3">Your SGPA is {sgpa.toFixed(4)}</h5>
                     </div>
                 </div>

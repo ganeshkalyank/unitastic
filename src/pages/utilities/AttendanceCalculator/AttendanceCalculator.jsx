@@ -1,20 +1,14 @@
-import { logEvent } from "firebase/analytics"
 import { useState } from "react"
-import { analytics } from "../../../firebase"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import "./AttendanceCalculator.css"
 import { Helmet } from "react-helmet"
+import { calculateCanBunk } from "../../../utils/calculators"
 
 const AttendanceCalculator = () => {
     const [credits, setCredits] = useState(0)
     const [bunked, setBunked] = useState(0)
     const [canBunk, setCanBunk] = useState(0)
-    
-    const calculateCanBunk = () => {
-        setCanBunk(Math.floor((credits * 16 * 0.2) - bunked))
-        logEvent(analytics, 'calculated_attendance', {credits: credits, bunked: bunked, canBunk: canBunk})
-    }
 
     return (
         <>
@@ -36,7 +30,7 @@ const AttendanceCalculator = () => {
                             <input type="text" className="form-control" id="bunked" placeholder="." onChange={(e) => setBunked(e.target.value)} />
                             <label htmlFor="bunked">Skipped</label>
                         </div>
-                        <button className="btn btn-primary rounded-5" onClick={calculateCanBunk}>Calculate</button>
+                        <button className="btn btn-primary rounded-5" onClick={() => setCanBunk(calculateCanBunk(credits, bunked))}>Calculate</button>
                         <hr />
                         {
                             canBunk > 0 ? <h5 className="text-center">You can skip {canBunk} classes</h5> : <h5 className="text-center">You can&apos;t skip any classes</h5>

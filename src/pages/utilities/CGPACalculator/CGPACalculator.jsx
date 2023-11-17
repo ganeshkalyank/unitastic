@@ -1,12 +1,11 @@
-import { logEvent } from "firebase/analytics"
 import { useState } from "react"
-import { analytics } from "../../../firebase"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import "./CGPACalculator.css"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import { Helmet } from "react-helmet"
+import { calculateCGPA } from "../../../utils/calculators"
 
 const CGPACalculator = () => {
     const [semesters, setSemesters] = useState([])
@@ -14,17 +13,6 @@ const CGPACalculator = () => {
 
     const addSemester = () => {
         setSemesters([...semesters, { sgpa: 0.0, credits: 0 }])
-    }
-
-    const calculateCGPA = () => {
-        let totalCredits = 0
-        let totalPoints = 0
-        semesters.forEach(semester => {
-            totalCredits += parseInt(semester.credits)
-            totalPoints += parseInt(semester.credits) * parseFloat(semester.sgpa)
-        })
-        setCGPA(totalPoints / totalCredits)
-        logEvent(analytics, 'calculated_cgpa', {semesters: semesters, cgpa: cgpa})
     }
 
     return (
@@ -68,7 +56,7 @@ const CGPACalculator = () => {
                             })
                         }
                         <hr />
-                        <button className="btn btn-primary rounded-5" onClick={calculateCGPA}>Calculate CGPA</button>
+                        <button className="btn btn-primary rounded-5" onClick={() => setCGPA(calculateCGPA(semesters))}>Calculate CGPA</button>
                         <h5 className="text-center mt-3">Your CGPA is {cgpa.toFixed(4)}</h5>
                     </div>
                 </div>
