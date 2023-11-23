@@ -1,4 +1,4 @@
-import { calculateCGPA, calculateCanBunk, calculateExternals, calculateSGPA, calculateSGPAForCGPA } from "../utils/calculators"
+import { calculateCGPA, calculateCanBunk, calculateExternals, calculateSGPA, calculateSGPAForCGPA } from "../../utils/calculators"
 import { expect, test } from "vitest"
 
 test('internals to externals', () => {
