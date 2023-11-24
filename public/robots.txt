@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unitastic.netlify.app/sitemap.xml
