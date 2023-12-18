@@ -2,57 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://unitastic.netlify.app/</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
 		<priority>0.8</priority>
 	</url>
 	<url>
-		<loc>https://unitastic.netlify.app/semesters</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://unitastic.netlify.app/sgpa</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://unitastic.netlify.app/cgpa</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://unitastic.netlify.app/targetcgpa</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
 		<loc>https://unitastic.netlify.app/externals</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://unitastic.netlify.app/attendance</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://unitastic.netlify.app/sgpa</loc>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://unitastic.netlify.app/cgpa</loc>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://unitastic.netlify.app/semesters</loc>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://unitastic.netlify.app/contribute</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://unitastic.netlify.app/feedback</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://unitastic.netlify.app/terms</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://unitastic.netlify.app/credits</loc>
-		<lastmod>2023-11-10T18:34:19+01:00</lastmod>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://unitastic.netlify.app/terms</loc>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://unitastic.netlify.app/targetcgpa</loc>
+		<lastmod>2023-12-18T19:55:39+01:00</lastmod>
 		<priority>1.0</priority>
 	</url>
 </urlset>
