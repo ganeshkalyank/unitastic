@@ -19,6 +19,9 @@ import TermsandConditions from './pages/info/TermsandConditions/TermsandConditio
 import SGPAforCGPA from './pages/utilities/SGPAforCGPA/SGPAforCGPA'
 import { logEvent } from 'firebase/analytics'
 import { analytics } from './firebase'
+import LoginForm from './pages/forms/LoginForm/LoginForm'
+import SignupForm from './pages/forms/SignupForm/SignupForm'
+import Profile from './pages/helpers/Profile/Profile'
 
 logEvent(analytics, 'root_opened')
 
@@ -35,6 +38,9 @@ const router = createBrowserRouter([
   { path: '/feedback', element: <FeedbackForm /> },
   { path: '/credits', element: <Credits /> },
   { path: '/terms', element: <TermsandConditions /> },
+  { path: '/login', element: <LoginForm /> },
+  { path: '/signup', element: <SignupForm /> },
+  { path: '/profile', element: <Profile /> },
   { path: '*', element: <PageNotFound /> },
 ])
 

@@ -2,8 +2,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
+import { onAuthStateChanged } from 'firebase/auth'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { auth } from '../../firebase'
 
 const Navbar = () => {
+    const [loggedIn, setLoggedIn] = useState(false)
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setLoggedIn(true)
+            }
+        })
+    }, [])
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow fixed-top bg-white">
             <div className="container-fluid">
@@ -56,6 +70,14 @@ const Navbar = () => {
                                 <li><Link className="dropdown-item" to="/contribute">Materials</Link></li>
                                 <li><Link className="dropdown-item" to="/feedback">Feedback</Link></li>
                             </ul>
+                        </li>
+                        <li className="nav-item">
+                            {
+                                loggedIn
+                                ? <Link to="/profile" className="nav-link">Profile</Link>
+                                : <Link to="/login" className="nav-link">Login</Link>
+                            
+                            }
                         </li>
                     </ul>
                 </div>
