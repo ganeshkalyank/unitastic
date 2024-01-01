@@ -12,9 +12,11 @@ const PersonalDetails = () => {
         department: ""
     })
     const [editing, setEditing] = useState(false)
+    const [disabled, setDisabled] = useState(false)
 
     const handleEdit = async () => {
         if (editing) {
+            setDisabled(true)
             await updateProfile(auth.currentUser, {
                 displayName: currentUser.displayName
             })
@@ -23,6 +25,7 @@ const PersonalDetails = () => {
                 department: currentUser.department
             }, { merge: true })
             setEditing(false)
+            setDisabled(false)
         } else {
             setEditing(true)
         }
@@ -84,22 +87,32 @@ const PersonalDetails = () => {
                 <select className="form-select" id="department" aria-label="Department" value={currentUser.department} disabled={!editing} onChange={(e) => setCurrentUser({...currentUser, department: e.target.value})}>
                     <option value="">Select</option>
                     <option value="Aerospace Engineering">Aerospace Engineering</option>
+                    <option value="Bioengineering">Bioengineering</option>
+                    <option value="Bioinformatics">Bioinformatics</option>
                     <option value="Biotechnology">Biotechnology</option>
-                    <option value="CSE (IoT and Automation)">CSE (IoT and Automation)</option>
+                    <option value="Chemical Engineering">Chemical Engineering</option>
                     <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Computer Science and Business Systems">Computer Science and Business Systems</option>
                     <option value="Computer Science and Engineering">Computer Science and Engineering</option>
-                    <option value="EEE (Smart Grid and Electric Vehicles)">EEE (Smart Grid and Electric Vehicles)</option>
+                    <option value="CSE (Artificial Intelligence and Data Science)">CSE (Artificial Intelligence and Data Science)</option>
+                    <option value="CSE (Cyber Security and Block Chain Technology)">CSE (Cyber Security and Block Chain Technology)</option>
+                    <option value="CSE (IoT and Automation)">CSE (IoT and Automation)</option>
                     <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                    <option value="EEE (Smart Grid and Electric Vehicles)">EEE (Smart Grid and Electric Vehicles)</option>
                     <option value="Electronics and Communications Engineering">Electronics and Communications Engineering</option>
+                    <option value="ECE (Cyber Physical Systems)">ECE (Cyber Physical Systems)</option>
                     <option value="Electronics and Instrumentation Engineering">Electronics and Instrumentation Engineering</option>
-                    <option value="Information Technology">Information Technology</option>
+                    <option value="Robotics and Artificial Intelligence">Robotics and Artificial Intelligence</option>
+                    <option value="EEE (VLSI Design and Technology)">EEE (VLSI Design and Technology)</option>
                     <option value="Information and Communication Technology">Information and Communication Technology</option>
+                    <option value="Information Technology">Information Technology</option>
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Mechanical Engineering (Digital Manufacturing)">Mechanical Engineering (Digital Manufacturing)</option>
                     <option value="Mechatronics">Mechatronics</option>
                 </select>
                 <label htmlFor="department">Department</label>
             </div>
-            <button type="button" className="btn btn-primary rounded-5" onClick={handleEdit}>{editing ? "Save" : "Edit"}</button>
+            <button type="button" className="btn btn-primary rounded-5" onClick={handleEdit} disabled={disabled}>{editing ? "Save" : "Edit"}</button>
         </div>
     )
 }
