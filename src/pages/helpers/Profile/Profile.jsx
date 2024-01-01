@@ -2,8 +2,8 @@ import { Helmet } from "react-helmet"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import "./Profile.css"
-import { useState } from "react"
-import { signOut } from "firebase/auth"
+import { useEffect, useState } from "react"
+import { onAuthStateChanged, signOut } from "firebase/auth"
 import PersonalDetails from "../../../components/UserInfo/PersonalDetails/PersonalDetails"
 import { useNavigate } from "react-router-dom"
 import ChangePassword from "../../../components/UserInfo/ChangePassword/ChangePassword"
@@ -19,9 +19,17 @@ const Profile = () => {
             await signOut(auth)
             navigate("/login")
         } catch (error) {
-            console.log(error)
+            // logout error
         }
     }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                navigate("/login")
+            }
+        })
+    }, [navigate])
 
     return (
         <>

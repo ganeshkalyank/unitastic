@@ -13,6 +13,13 @@ const getPersonalizedMaterials = async () => {
     const user = auth.currentUser
     if (!user) return null
     try {
+        if (!user.emailVerified) {
+            return {
+                name: "Verify your email",
+                description: "You haven't verified your email. Please verify your email to access your personalized materials.",
+                url: "/profile"
+            }
+        }
         const userData = await getDoc(doc(db, "users", user.uid))
         if (userData.data().semester == "Semester 1 & 2") {
             return {

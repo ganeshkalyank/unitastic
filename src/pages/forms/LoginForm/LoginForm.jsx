@@ -3,7 +3,7 @@ import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import "./LoginForm.css"
 import { useState } from "react"
-import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"
+import { onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth"
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import { auth } from "../../../firebase"
@@ -36,6 +36,19 @@ const LoginForm = () => {
                 setResponse("An error occurred. Please try again later.")
             }
             setSubmitting(false)
+        }
+    }
+
+    const handleForgotPassword = async () => {
+        try {
+            if (user.email) {
+                await sendPasswordResetEmail(auth, user.email)
+                setResponse("Password reset email sent. Please check your inbox.")
+            } else {
+                setResponse("Please enter your email.")
+            }
+        } catch (error) {
+            setResponse("Error sending password reset email.")
         }
     }
 
@@ -72,7 +85,8 @@ const LoginForm = () => {
                             <input type="password" className="form-control" id="password" placeholder="Password" onChange={(e) => setUser({...user, password: e.target.value})} required />
                             <label htmlFor="password">Password*</label>
                         </div>
-                        <button type="submit" className="btn btn-primary rounded-5" disabled={submitting}>Login</button>
+                        <button type="submit" className="btn btn-primary rounded-5 mb-3" disabled={submitting}>Login</button>
+                        <p className="form-text"><a href="#" onClick={handleForgotPassword}>Forgot Password?</a></p>
                         <p className="text-center mt-3">{response}</p>
                     </form>
                     <hr />

@@ -1,4 +1,4 @@
-import { onAuthStateChanged, updateProfile } from "firebase/auth"
+import { onAuthStateChanged, sendEmailVerification, updateProfile } from "firebase/auth"
 import { doc, getDoc, setDoc } from "firebase/firestore"
 import { useEffect } from "react"
 import { useState } from "react"
@@ -13,6 +13,7 @@ const PersonalDetails = () => {
     })
     const [editing, setEditing] = useState(false)
     const [disabled, setDisabled] = useState(false)
+    const [resendMailResponse, setResendMailResponse] = useState("")
 
     const handleEdit = async () => {
         if (editing) {
@@ -31,7 +32,14 @@ const PersonalDetails = () => {
         }
     }
 
-
+    const handleResendConfirmationMail = async () => {
+        try {
+            await sendEmailVerification(auth.currentUser)
+            setResendMailResponse("Confirmation mail sent. Please check your inbox.")
+        } catch (error) {
+            setResendMailResponse("Error sending confirmation mail.")
+        }
+    }
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -40,13 +48,15 @@ const PersonalDetails = () => {
                     displayName: user.displayName,
                     email: user.email,
                     semester: "",
-                    department: ""
+                    department: "",
+                    emailVerified: user.emailVerified
                 })
                 getDoc(doc(db, "users", user.uid)).then((data) => {
                     if (data.exists()) {
                         setCurrentUser({
                             displayName: user.displayName,
                             email: user.email,
+                            emailVerified: user.emailVerified,
                             semester: data.data().semester,
                             department: data.data().department
                         })
@@ -68,6 +78,16 @@ const PersonalDetails = () => {
                 <input type="email" className="form-control" id="email" placeholder="Email" value={currentUser.email} disabled />
                 <label htmlFor="email">Email</label>
             </div>
+            <p className="form-text">
+                {currentUser.emailVerified ? (
+                    "Email Verified."
+                ): (
+                    <>
+                    Email Not Verified. <a href="#" onClick={handleResendConfirmationMail}>Resend confirmation mail</a>
+                    { resendMailResponse }
+                    </>
+                )}
+            </p>
             <div className="form-floating mb-3 col-lg-6">
                 <select className="form-select" id="semester" aria-label="Semester" value={currentUser.semester} disabled={!editing} onChange={(e) => setCurrentUser({...currentUser, semester: e.target.value})}>
                     <option value="">Select</option>

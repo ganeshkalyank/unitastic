@@ -16,7 +16,6 @@ const Semesters = () => {
         const personalizedMaterialsList = await getPersonalizedMaterials()
         setSemesters(semestersList)
         setPersonalizedMaterials(personalizedMaterialsList)
-        console.log(personalizedMaterialsList)
         setLoading(false)
     }
 

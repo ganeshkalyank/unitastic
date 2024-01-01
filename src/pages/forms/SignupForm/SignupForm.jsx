@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet"
-import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth"
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, updateProfile } from "firebase/auth"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import "./SignupForm.css"
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { auth } from "../../../firebase"
 
 const SignupForm = () => {
@@ -15,6 +15,8 @@ const SignupForm = () => {
     })
     const [submitting, setSubmitting] = useState(false)
     const [response, setResponse] = useState("")
+
+    const navigate = useNavigate()
 
     const handleSignup = async (e) => {
         e.preventDefault()
@@ -29,7 +31,6 @@ const SignupForm = () => {
             setResponse("Signup successful. Please check your inbox for verification email.")
             setSubmitting(false)
         } catch (error) {
-            console.log(error)
             if (error.code === "auth/email-already-in-use") {
                 setResponse("Email already in use.")
             } else if (error.code === "auth/invalid-email") {
@@ -42,6 +43,14 @@ const SignupForm = () => {
             setSubmitting(false)
         }
     }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                navigate("/profile")
+            }
+        })
+    }, [navigate])
 
     return (
         <>
