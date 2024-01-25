@@ -47,7 +47,7 @@ const SignupForm = () => {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                navigate("/profile")
+                navigate("/semesters")
             }
         })
     }, [navigate])
