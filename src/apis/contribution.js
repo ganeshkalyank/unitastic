@@ -3,12 +3,12 @@ import { logEvent } from "firebase/analytics"
 import { analytics } from "../firebase"
 
 const contributionApi = axios.create({
-    baseURL: "https://api.ganeshkalyan.in/unitastic",
+    baseURL: "https://formspree.io",
 })
 
 const postContribution = async (contribution) => {
     try {
-        const response = await contributionApi.post("/contribute", contribution)
+        const response = await contributionApi.post("/f/xpzgdjwa", contribution)
         if (response.status === 200) {
             logEvent(analytics, 'contribution_submitted', {contribution: contribution})
             return "Thank you for your contribution. We will review it and add it to our database."
@@ -21,7 +21,7 @@ const postContribution = async (contribution) => {
 
 const postFeedback = async (feedback) => {
     try {
-        const response = await contributionApi.post("/feedback", feedback)
+        const response = await contributionApi.post("/f/xpzgdybl", feedback)
         if (response.status === 200) {
             logEvent(analytics, 'feedback_submitted', {feedback: feedback})
             return "Thank you for your feedback."
