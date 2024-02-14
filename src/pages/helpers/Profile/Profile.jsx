@@ -8,6 +8,7 @@ import PersonalDetails from "../../../components/UserInfo/PersonalDetails/Person
 import { useNavigate } from "react-router-dom"
 import ChangePassword from "../../../components/UserInfo/ChangePassword/ChangePassword"
 import { auth } from "../../../firebase"
+// import SWIIntegration from "../../../components/UserInfo/SWIIntegration/SWIIntegration"
 
 const Profile = () => {
     const [tab, setTab] = useState("personal-details")
@@ -57,7 +58,8 @@ const Profile = () => {
                 <div className="container p-3">
                     { tab === "personal-details" && <PersonalDetails /> }
                     { tab === "change-password" && <ChangePassword /> }
-                    { tab === "swi-integration" && <h3>Coming soon...</h3> }
+                    {/* { tab === "swi-integration" && <SWIIntegration /> } */}
+                    { tab === "swi-integration" && <p>Coming soon...</p> }
                     { tab === "logout" && <h3>Logout</h3> }
                 </div>
             </div>
