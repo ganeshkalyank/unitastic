@@ -37,6 +37,9 @@ const Semester = () => {
             setLoading(false)
         }
         getData()
+        if (window.adsbygoogle && !window.adsbygoogle.loaded) {
+            (window.adsbygoogle = window.adsbygoogle || []).push({})
+        }
     }, [id])
 
     return (
@@ -54,7 +57,14 @@ const Semester = () => {
                 </div>
             ): (
                 <div className="container semester-container">
-                    <h3 className="text-center">Select Subject</h3>
+                    <div className="w-100 d-flex justify-content-center">
+                        {/* Unitastic Horizontal Banner */}
+                        <ins className="adsbygoogle"
+                            style={{ display: "inline-block", width: "728px", height: "90px" }}
+                            data-ad-client="ca-pub-7240094938519313"
+                            data-ad-slot="1796885446"></ins>
+                    </div>
+                    <h3 className="text-center mt-5">Select Subject</h3>
                     <div className="row gy-2 mt-3">
                         {
                             depts.length > 0 ? (

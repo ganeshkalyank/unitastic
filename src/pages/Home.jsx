@@ -7,7 +7,7 @@ import calculator from "../assets/calculator.svg"
 import Quote from "../components/Quote/Quote"
 import { Link } from "react-router-dom"
 import { Helmet } from "react-helmet"
-// import { useEffect } from "react"
+import { useEffect } from "react"
 // import { ToastContainer, toast } from "react-toastify"
 // import "react-toastify/dist/ReactToastify.min.css"
 
@@ -28,9 +28,12 @@ const Home = () => {
     //     }
     // )
 
-    // useEffect(() => {
-    //     notify()
-    // }, [])
+    useEffect(() => {
+        // notify()
+        if (window.adsbygoogle && !window.adsbygoogle.loaded) {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    }, [])
 
     return (
         <>
@@ -66,7 +69,14 @@ const Home = () => {
             <Quote />
             <div className="services-container p-3">
                 <div className="container">
-                    <div className="row">
+                    <div className="mt-5 d-flex justify-content-center">
+                        {/* Unitastic Horizontal Banner */}
+                        <ins className="adsbygoogle"
+                            style={{ display: "inline-block", width: "728px", height: "90px" }}
+                            data-ad-client="ca-pub-7240094938519313"
+                            data-ad-slot="1796885446"></ins>
+                    </div>
+                    <div className="row mt-5">
                         <div className="col-lg-6 d-flex justify-content-center">
                             <img src={library} className="img-fluid" alt="Materials" />
                         </div>

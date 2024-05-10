@@ -21,6 +21,9 @@ const Semesters = () => {
 
     useEffect(() => {
         getSemesterData()
+        if (window.adsbygoogle && !window.adsbygoogle.loaded) {
+            (window.adsbygoogle = window.adsbygoogle || []).push({})
+        }
     }, [])
 
     return (
@@ -58,7 +61,14 @@ const Semesters = () => {
                     ) : (
                         <h5 className="text-center mb-3">Login or Signup to get Personalized Materials.</h5>
                     )}
-                    <h3 className="text-center">Select Semester</h3>
+                    <div className="w-100 d-flex justify-content-center mt-5">
+                        {/* Unitastic Horizontal Banner */}
+                        <ins className="adsbygoogle"
+                            style={{ display: "inline-block", width: "728px", height: "90px" }}
+                            data-ad-client="ca-pub-7240094938519313"
+                            data-ad-slot="1796885446"></ins>
+                    </div>
+                    <h3 className="text-center mt-5">Select Semester</h3>
                     <div className="row gy-2 mt-3">
                         {
                             semesters.map(semester => (
