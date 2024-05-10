@@ -78,12 +78,12 @@ const Home = () => {
                             data-ad-format="auto"
                             data-full-width-responsive="true"></ins>
                     </div>
-                    <div className="row mt-5">
+                    <div className="row mt-3 mt-md-5">
                         <div className="col-lg-6 d-flex justify-content-center">
                             <img src={library} className="img-fluid" alt="Materials" />
                         </div>
                         <div className="col-lg-6">
-                            <h2 className="services-title mt-5 mb-4">Materials</h2>
+                            <h2 className="services-title mt-3 mt-md-5 mb-4">Materials</h2>
                             <p className="services-text">
                                 Get all the materials you need for your university life, be it notes,
                                 previous question papers, or even textbooks.

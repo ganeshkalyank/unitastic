@@ -66,7 +66,7 @@ const Semester = () => {
                             data-ad-format="auto"
                             data-full-width-responsive="true"></ins>
                     </div>
-                    <h3 className="text-center mt-5">Select Subject</h3>
+                    <h3 className="text-center mt-3 mt-md-5">Select Subject</h3>
                     <div className="row gy-2 mt-3">
                         {
                             depts.length > 0 ? (

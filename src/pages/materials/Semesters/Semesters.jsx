@@ -61,7 +61,7 @@ const Semesters = () => {
                     ) : (
                         <h5 className="text-center mb-3">Login or Signup to get Personalized Materials.</h5>
                     )}
-                    <div className="w-100 d-flex justify-content-center mt-5">
+                    <div className="w-100 d-flex justify-content-center mt-3 mt-md-5">
                         {/* Unitastic Horizontal Banner */}
                         <ins className="adsbygoogle"
                             style={{ display: "block" }}
@@ -70,7 +70,7 @@ const Semesters = () => {
                             data-ad-format="auto"
                             data-full-width-responsive="true"></ins>
                     </div>
-                    <h3 className="text-center mt-5">Select Semester</h3>
+                    <h3 className="text-center mt-3 mt-md-5">Select Semester</h3>
                     <div className="row gy-2 mt-3">
                         {
                             semesters.map(semester => (
