@@ -72,9 +72,11 @@ const Home = () => {
                     <div className="mt-5 d-flex justify-content-center">
                         {/* Unitastic Horizontal Banner */}
                         <ins className="adsbygoogle"
-                            style={{ display: "inline-block", width: "728px", height: "90px" }}
+                            style={{ display: "block" }}
                             data-ad-client="ca-pub-7240094938519313"
-                            data-ad-slot="1796885446"></ins>
+                            data-ad-slot="1796885446"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
                     </div>
                     <div className="row mt-5">
                         <div className="col-lg-6 d-flex justify-content-center">
