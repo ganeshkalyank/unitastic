@@ -8,6 +8,8 @@ import Quote from "../components/Quote/Quote"
 import { Link } from "react-router-dom"
 import { Helmet } from "react-helmet"
 import { useEffect } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMugHot } from "@fortawesome/free-solid-svg-icons"
 // import { ToastContainer, toast } from "react-toastify"
 // import "react-toastify/dist/ReactToastify.min.css"
 
@@ -60,6 +62,10 @@ const Home = () => {
                         </p>
                         <Link to="/semesters" className="btn btn-primary rounded-5 me-2 mb-2">Get Materials</Link>
                         <a href="https://1drv.ms/u/s!AqPn_d7bfTh2cnjPYfnfxXwbC2c?e=gS4vKo" target="_blank" rel="noreferrer" className="btn btn-primary rounded-5 me-2 mb-2">Download Android App</a>
+                        <a href="https://buymeacoffee.com/xoidykilr" target="_blank" rel="noreferrer" className="btn btn-primary rounded-5 me-2 mb-2">
+                            Buy me a coffee
+                            <FontAwesomeIcon icon={faMugHot} className="ms-2" />
+                        </a>
                     </div>
                     <div className="col-lg-6 d-flex justify-content-center">
                         <img src={collegestudents} className="img-fluid" alt="College Students" />

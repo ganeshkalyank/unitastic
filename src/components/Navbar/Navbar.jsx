@@ -69,6 +69,7 @@ const Navbar = () => {
                             <ul className="dropdown-menu text-center dropdown-menu-end">
                                 <li><Link className="dropdown-item" to="/contribute">Materials</Link></li>
                                 <li><Link className="dropdown-item" to="/feedback">Feedback</Link></li>
+                                <li><a className="dropdown-item" href="https://buymeacoffee.com/xoidykilr" target="_blank" rel="noreferrer">Buy me a coffee</a></li>
                             </ul>
                         </li>
                         <li className="nav-item">
