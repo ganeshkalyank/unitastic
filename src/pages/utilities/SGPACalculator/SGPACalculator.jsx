@@ -6,6 +6,7 @@ import Footer from "../../../components/Footer/Footer"
 import "./SGPACalculator.css"
 import { Helmet } from "react-helmet-async"
 import { calculateSGPA } from "../../../utils/calculators"
+import { BASE_URL } from "../../../utils/constants"
 
 const SGPACalculator = () => {
     const [subjects, setSubjects] = useState([])
@@ -19,7 +20,7 @@ const SGPACalculator = () => {
         <>
             <Helmet>
                 <title>SGPA Calculator | Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/sgpa" />
+                <link rel="canonical" href={ BASE_URL+"/sgpa" } />
             </Helmet>
             <Navbar />
             <div className="container sgpa-container">

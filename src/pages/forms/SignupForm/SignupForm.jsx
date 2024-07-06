@@ -6,6 +6,7 @@ import "./SignupForm.css"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { auth } from "../../../firebase"
+import { BASE_URL } from "../../../utils/constants"
 
 const SignupForm = () => {
     const [user, setUser] = useState({
@@ -56,7 +57,7 @@ const SignupForm = () => {
         <>
         <Helmet>
             <title>Signup | Unitastic</title>
-            <link rel="canonical" href="https://unitastic.netlify.app/signup" />
+            <link rel="canonical" href={ BASE_URL+"/signup" } />
         </Helmet>
         <Navbar />
         <div className="container signup-form">

@@ -10,6 +10,7 @@ import { useEffect } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMugHot } from "@fortawesome/free-solid-svg-icons"
 import { Helmet } from "react-helmet-async"
+import { BASE_URL } from "../utils/constants"
 // import { ToastContainer, toast } from "react-toastify"
 // import "react-toastify/dist/ReactToastify.min.css"
 
@@ -41,7 +42,7 @@ const Home = () => {
         <>
             <Helmet>
                 <title>Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/" />
+                <link rel="canonical" href={BASE_URL} />
             </Helmet>
             {/* <ToastContainer /> */}
             <Navbar />

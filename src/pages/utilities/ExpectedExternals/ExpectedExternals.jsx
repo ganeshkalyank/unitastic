@@ -4,6 +4,7 @@ import Footer from "../../../components/Footer/Footer"
 import "./ExpectedExternals.css"
 import { Helmet } from "react-helmet-async"
 import { calculateExternals } from "../../../utils/calculators"
+import { BASE_URL } from "../../../utils/constants"
 
 const ExpectedExternals = () => {
     const [externals, setExternals] = useState({})
@@ -12,7 +13,7 @@ const ExpectedExternals = () => {
         <>
             <Helmet>
                 <title>Expected Externals | Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/externals" />
+                <link rel="canonical" href={ BASE_URL+"/externals" } />
             </Helmet>
             <Navbar />
             <div className="container externals-container">

@@ -8,6 +8,7 @@ import PersonalDetails from "../../../components/UserInfo/PersonalDetails/Person
 import { useNavigate } from "react-router-dom"
 import ChangePassword from "../../../components/UserInfo/ChangePassword/ChangePassword"
 import { auth } from "../../../firebase"
+import { BASE_URL } from "../../../utils/constants"
 // import SWIIntegration from "../../../components/UserInfo/SWIIntegration/SWIIntegration"
 
 const Profile = () => {
@@ -36,7 +37,7 @@ const Profile = () => {
         <>
         <Helmet>
             <title>Profile | Unitastic</title>
-            <link rel="canonical" href="https://unitastic.netlify.app/profile" />
+            <link rel="canonical" href={ BASE_URL+"/profile" } />
         </Helmet>
         <Navbar />
         <div className="container profile">

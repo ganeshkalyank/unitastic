@@ -4,6 +4,7 @@ import Footer from "../../../components/Footer/Footer"
 import "./SGPAforCGPA.css"
 import { Helmet } from "react-helmet-async"
 import { calculateSGPAForCGPA } from "../../../utils/calculators"
+import { BASE_URL } from "../../../utils/constants"
 
 const SGPAforCGPA = () => {
 
@@ -17,7 +18,7 @@ const SGPAforCGPA = () => {
         <>
             <Helmet>
                 <title>Required SGPA Calculator | Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/targetcgpa" />
+                <link rel="canonical" href={ BASE_URL+"/targetcgpa" } />
             </Helmet>
             <Navbar />
             <div className="container sgforcg-container">

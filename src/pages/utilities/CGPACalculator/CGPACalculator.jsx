@@ -6,6 +6,7 @@ import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import { Helmet } from "react-helmet-async"
 import { calculateCGPA } from "../../../utils/calculators"
+import { BASE_URL } from "../../../utils/constants"
 
 const CGPACalculator = () => {
     const [semesters, setSemesters] = useState([])
@@ -19,7 +20,7 @@ const CGPACalculator = () => {
         <>
             <Helmet>
                 <title>CGPA Calculator | Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/cgpa" />
+                <link rel="canonical" href={ BASE_URL+"/cgpa" } />
             </Helmet>
             <Navbar />
             <div className="container cgpa-container">

@@ -7,6 +7,7 @@ import { onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword 
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import { auth } from "../../../firebase"
+import { BASE_URL } from "../../../utils/constants"
 
 const LoginForm = () => {
     const [user, setUser] = useState({
@@ -64,7 +65,7 @@ const LoginForm = () => {
         <>
         <Helmet>
             <title>Login | Unitastic</title>
-            <link rel="canonical" href="https://unitastic.netlify.app/login" />
+            <link rel="canonical" href={ BASE_URL+"/login" } />
         </Helmet>
         <Navbar />
         <div className="container login-form">

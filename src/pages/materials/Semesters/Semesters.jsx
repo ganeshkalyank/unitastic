@@ -5,6 +5,7 @@ import { getPersonalizedMaterials, getSemesters } from "../../../apis/materials"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import "./Semesters.css"
+import { BASE_URL } from "../../../utils/constants"
 
 const Semesters = () => {
     const [semesters, setSemesters] = useState([])
@@ -30,7 +31,7 @@ const Semesters = () => {
         <>
             <Helmet>
                 <title>Semesters | Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/semesters" />
+                <link rel="canonical" href={ BASE_URL+"/semesters" } />
             </Helmet>
             <Navbar />
             { loading ? (

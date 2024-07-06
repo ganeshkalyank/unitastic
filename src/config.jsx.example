@@ -1,6 +1,4 @@
 const firebaseConfig = {
 }
 
-const BASE_URL = ''
-
-export { firebaseConfig, BASE_URL }
+export { firebaseConfig }

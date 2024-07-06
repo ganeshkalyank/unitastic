@@ -2,13 +2,14 @@ import { Helmet } from "react-helmet-async"
 import Footer from "../../../components/Footer/Footer"
 import Navbar from "../../../components/Navbar/Navbar"
 import "./TermsandConditions.css"
+import { BASE_URL } from "../../../utils/constants"
 
 const TermsandConditions = () => {
     return (
         <>
         <Helmet>
             <title>Terms and Conditions | Unitastic</title>
-            <link rel="canonical" href="https://unitastic.netlify.app/terms" />
+            <link rel="canonical" href={ BASE_URL+"/terms" } />
         </Helmet>
         <Navbar />
         <div className="container terms-container">

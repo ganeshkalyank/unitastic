@@ -4,6 +4,7 @@ import "./ContributionForm.css"
 import Footer from "../../../components/Footer/Footer"
 import { Helmet } from "react-helmet-async"
 import { postContribution } from "../../../apis/contribution"
+import { BASE_URL } from "../../../utils/constants"
 
 const ContributionForm = () => {
     const [contribution, setContribution] = useState({})
@@ -21,7 +22,7 @@ const ContributionForm = () => {
         <>
             <Helmet>
                 <title>Contribute | Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/contribute" />
+                <link rel="canonical" href={ BASE_URL+"/contribute"} />
             </Helmet>
             <Navbar />
             <div className="container contribution-form">

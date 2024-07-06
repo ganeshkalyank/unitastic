@@ -4,6 +4,7 @@ import Footer from "../../../components/Footer/Footer"
 import "./AttendanceCalculator.css"
 import { Helmet } from "react-helmet-async"
 import { calculateCanBunk } from "../../../utils/calculators"
+import { BASE_URL } from "../../../utils/constants"
 
 const AttendanceCalculator = () => {
     const [credits, setCredits] = useState(0)
@@ -14,7 +15,7 @@ const AttendanceCalculator = () => {
         <>
             <Helmet>
                 <title>Class Skippability | Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/attendance" />
+                <link rel="canonical" href={ BASE_URL+"/attendance" } />
             </Helmet>
             <Navbar />
             <div className="container attendance-container">

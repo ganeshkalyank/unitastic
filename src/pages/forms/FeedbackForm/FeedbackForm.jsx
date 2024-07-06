@@ -4,6 +4,7 @@ import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import "./FeedbackForm.css"
 import { postFeedback } from "../../../apis/contribution"
+import { BASE_URL } from "../../../utils/constants"
 
 const FeedbackForm = () => {
     const [feedback, setFeedback] = useState({})
@@ -22,7 +23,7 @@ const FeedbackForm = () => {
         <>
             <Helmet>
                 <title>Feedback | Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/feedback" />
+                <link rel="canonical" href={ BASE_URL+"/feedback" } />
             </Helmet>
             <Navbar />
             <div className="container feedback-form">

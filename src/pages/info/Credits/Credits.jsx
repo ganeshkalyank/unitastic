@@ -2,13 +2,14 @@ import { Helmet } from "react-helmet-async"
 import Footer from "../../../components/Footer/Footer"
 import Navbar from "../../../components/Navbar/Navbar"
 import "./Credits.css"
+import { BASE_URL } from "../../../utils/constants"
 
 const Credits = () => {
     return (
         <>
             <Helmet>
                 <title>Credits | Unitastic</title>
-                <link rel="canonical" href="https://unitastic.netlify.app/credits" />
+                <link rel="canonical" href={ BASE_URL+"/credits" } />
             </Helmet>
             <Navbar />
             <div className="container credits-container">
