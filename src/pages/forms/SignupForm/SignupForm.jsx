@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, updateProfile } from "firebase/auth"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"

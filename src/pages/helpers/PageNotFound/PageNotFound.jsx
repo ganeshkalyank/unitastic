@@ -2,7 +2,7 @@ import Footer from "../../../components/Footer/Footer"
 import Navbar from "../../../components/Navbar/Navbar"
 import notfound from "../../../assets/notfound.svg"
 import "./PageNotFound.css"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 
 const PageNotFound = () => {
     return (

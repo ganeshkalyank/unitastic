@@ -2,7 +2,7 @@ import { useState } from "react"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
 import "./ExpectedExternals.css"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import { calculateExternals } from "../../../utils/calculators"
 
 const ExpectedExternals = () => {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import { getPersonalizedMaterials, getSemesters } from "../../../apis/materials"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"

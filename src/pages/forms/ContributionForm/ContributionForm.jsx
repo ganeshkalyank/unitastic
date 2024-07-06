@@ -2,7 +2,7 @@ import { useState } from "react"
 import Navbar from "../../../components/Navbar/Navbar"
 import "./ContributionForm.css"
 import Footer from "../../../components/Footer/Footer"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import { postContribution } from "../../../apis/contribution"
 
 const ContributionForm = () => {

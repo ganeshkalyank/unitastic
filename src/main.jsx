@@ -22,6 +22,7 @@ import { analytics } from './firebase'
 import LoginForm from './pages/forms/LoginForm/LoginForm'
 import SignupForm from './pages/forms/SignupForm/SignupForm'
 import Profile from './pages/helpers/Profile/Profile'
+import { HelmetProvider } from 'react-helmet-async'
 
 logEvent(analytics, 'root_opened')
 
@@ -46,6 +47,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </React.StrictMode>,
 )

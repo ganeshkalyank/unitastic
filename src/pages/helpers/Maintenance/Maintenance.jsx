@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import notfound from "../../assets/notfound.svg"
 import "./Maintenance.css"
 

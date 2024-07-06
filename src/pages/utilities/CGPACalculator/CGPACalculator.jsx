@@ -4,7 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import "./CGPACalculator.css"
 import Navbar from "../../../components/Navbar/Navbar"
 import Footer from "../../../components/Footer/Footer"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import { calculateCGPA } from "../../../utils/calculators"
 
 const CGPACalculator = () => {

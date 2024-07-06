@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import Footer from "../../../components/Footer/Footer"
 import "./SGPACalculator.css"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import { calculateSGPA } from "../../../utils/calculators"
 
 const SGPACalculator = () => {
