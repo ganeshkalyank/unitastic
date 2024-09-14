@@ -50,7 +50,7 @@ const Navbar = () => {
                                 <li><a className="dropdown-item" href="https://webstream.sastra.edu/sastrapwi/" target="_blank" rel="noreferrer">Student Web Interface</a></li>
                                 <li><a className="dropdown-item" href="https://webstream.sastra.edu/sastraparentweb/" target="_blank" rel="noreferrer">Parent Web Interface</a></li>
                                 <li><a className="dropdown-item" href="https://biometric.sastra.edu/" target="_blank" rel="noreferrer">Hostel Leave Portal</a></li>
-                                <li><a className="dropdown-item" href="https://www.sastra.edu/downloads/menu/Academics/Academic_Calender_2023_24_TPJ.pdf" target="_blank" rel="noreferrer">Academic Calendar</a></li>
+                                <li><a className="dropdown-item" href="https://sastra.edu/downloads/menu/Academics/2024-25/MC_Academic_Calendar_2024-25.pdf" target="_blank" rel="noreferrer">Academic Calendar</a></li>
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
