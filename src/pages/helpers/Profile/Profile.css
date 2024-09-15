@@ -1,18 +1,18 @@
 .profile {
-    margin-top: 20vh;
-    margin-bottom: 20vh;
-    min-height: 60vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  min-height: 60vh;
 }
 
 .nav-link {
-    color: gray;
-    font-weight: normal;
+  color: gray;
+  font-weight: normal;
 }
 
 .nav-link.active {
-    color: black;
+  color: black;
 }
 
 .nav-link:hover {
-    color: black;
+  color: black;
 }

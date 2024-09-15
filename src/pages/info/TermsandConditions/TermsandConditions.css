@@ -1,12 +1,12 @@
 .terms-container {
-    margin-top: 20vh;
-    margin-bottom: 20vh;
-    min-height: 60vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  min-height: 60vh;
 }
 
 .terms-container h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--accent);
-    font-family: "Pacifico", cursive;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+  font-family: "Pacifico", cursive;
 }

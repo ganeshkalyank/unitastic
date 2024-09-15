@@ -1,34 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Pacifico&display=swap");
 
 :root {
-    --primary: #222831;
-    --secondary: #393e46;
-    --accent: #00adb5;
-    --light: #eeeeee;
+  --primary: #222831;
+  --secondary: #393e46;
+  --accent: #00adb5;
+  --light: #eeeeee;
 }
 
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400;
-    background-color: #eeeeee;
-    color: var(--primary);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  background-color: #eeeeee;
+  color: var(--primary);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
-    color: var(--primary);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  color: var(--primary);
 }
 
 .btn-primary {
-    background-color: var(--accent)!important;
-    border-color: var(--accent)!important;
-    color: var(--light)!important;
-    transition: all 0.3s ease-in-out;
-    font-weight: 600;
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--light) !important;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
 }
 
 .btn-primary:hover {
-    background-color: var(--accent)!important;
-    opacity: 0.8;
+  background-color: var(--accent) !important;
+  opacity: 0.8;
 }

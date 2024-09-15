@@ -1,11 +1,11 @@
 .semesters-container {
-    margin-top: 20vh;
-    margin-bottom: 20vh;
-    min-height: 60vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  min-height: 60vh;
 }
 
 .semesters-container h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--primary);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
 }

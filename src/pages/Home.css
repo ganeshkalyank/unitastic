@@ -1,73 +1,73 @@
 .toast-content {
-    font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .landing {
-    padding-top: 25vh;
-    padding-bottom: 10vh;
+  padding-top: 25vh;
+  padding-bottom: 10vh;
 }
 
 .landing-title {
-    font-size: 3rem;
-    font-family: 'Pacifico', cursive;
-    color: var(--accent);
+  font-size: 3rem;
+  font-family: "Pacifico", cursive;
+  color: var(--accent);
 }
 
 .landing-subtitle {
-    font-weight: 600;
-    color: var(--primary);
+  font-weight: 600;
+  color: var(--primary);
 }
 
 .landing-line {
-    width: 100px;
-    height: 5px;
-    background-color: var(--accent);
+  width: 100px;
+  height: 5px;
+  background-color: var(--accent);
 }
 
 .landing-text {
-    font-size: 1.2rem;
-    color: var(--secondary);
+  font-size: 1.2rem;
+  color: var(--secondary);
 }
 
 .text-primary {
-    color: var(--accent)!important;
+  color: var(--accent) !important;
 }
 
 .services-title {
-    font-size: 2rem;
-    font-family: 'Pacifico', cursive;
-    color: var(--accent);
+  font-size: 2rem;
+  font-family: "Pacifico", cursive;
+  color: var(--accent);
 }
 
 .services-text {
-    font-size: 1.2rem;
-    color: var(--secondary);
+  font-size: 1.2rem;
+  color: var(--secondary);
 }
 
 @media only screen and (min-width: 1200px) {
-    .landing {
-        height: 100vh;
-    }
+  .landing {
+    height: 100vh;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .landing {
-        padding-top: 15vh;
-    }
+  .landing {
+    padding-top: 15vh;
+  }
 
-    .landing-title {
-        font-size: 2rem;
-    }
+  .landing-title {
+    font-size: 2rem;
+  }
 
-    .landing-text {
-        font-size: 1rem;
-    }
+  .landing-text {
+    font-size: 1rem;
+  }
 
-    .services-title {
-        font-size: 1.5rem;
-    }
+  .services-title {
+    font-size: 1.5rem;
+  }
 
-    .services-text {
-        font-size: 1rem;
-    }
+  .services-text {
+    font-size: 1rem;
+  }
 }

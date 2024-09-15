@@ -1,27 +1,27 @@
 .quote-container p {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .quote-container cite {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .quote-container h3 {
-    font-family: 'Pacifico', cursive;
-    font-size: 2rem;
-    color: var(--accent);
+  font-family: "Pacifico", cursive;
+  font-size: 2rem;
+  color: var(--accent);
 }
 
 @media only screen and (max-width: 768px) {
-    .quote-container p {
-        font-size: 1.2rem;
-    }
-    
-    .quote-container cite {
-        font-size: 1rem;
-    }
-    
-    .quote-container h3 {
-        font-size: 1.5rem;
-    }
+  .quote-container p {
+    font-size: 1.2rem;
+  }
+
+  .quote-container cite {
+    font-size: 1rem;
+  }
+
+  .quote-container h3 {
+    font-size: 1.5rem;
+  }
 }
