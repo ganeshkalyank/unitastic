@@ -29,10 +29,6 @@
   color: var(--secondary);
 }
 
-.text-primary {
-  color: var(--accent) !important;
-}
-
 .services-title {
   font-size: 2rem;
   font-family: "Pacifico", cursive;

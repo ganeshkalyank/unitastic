@@ -11,27 +11,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMugHot } from "@fortawesome/free-solid-svg-icons";
 import { Helmet } from "react-helmet-async";
 import { BASE_URL } from "../utils/constants";
-// import { ToastContainer, toast } from "react-toastify"
-// import "react-toastify/dist/ReactToastify.min.css"
 
 const Home = () => {
-  // const AndroidToast = () => (
-  //     <div className="toast-content text-center">
-  //         Unitastic is now available for Android! Download it&nbsp;
-  //         <a href="https://1drv.ms/u/s!AqPn_d7bfTh2cnjPYfnfxXwbC2c?e=gS4vKo" target="_blank" rel="noreferrer">here</a>.
-  //     </div>
-  // )
-
-  // const notify = () => toast(
-  //     <AndroidToast />,
-  //     {
-  //         position: toast.POSITION.BOTTOM_CENTER,
-  //         autoClose: false,
-  //     }
-  // )
-
   useEffect(() => {
-    // notify()
     if (window.adsbygoogle && !window.adsbygoogle.loaded) {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     }

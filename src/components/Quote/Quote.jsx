@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { getRandomInspirationalQuote } from "../../apis/quote";
 import "./Quote.css";
+import { QUOTES } from "../../utils/constants";
 
 const Quote = () => {
-  const [quote, setQuote] = useState({});
+  const [quote, setQuote] = useState(
+    QUOTES[Math.floor(Math.random() * QUOTES.length)],
+  );
 
   useEffect(() => {
     getRandomInspirationalQuote().then((quote) => setQuote(quote));
