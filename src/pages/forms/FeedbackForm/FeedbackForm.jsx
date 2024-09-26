@@ -98,7 +98,7 @@ const FeedbackForm = () => {
                 className="btn btn-primary rounded-5"
                 disabled={submitting}
               >
-                Submit
+                {submitting ? "Submitting..." : "Submit"}
               </button>
               <p className="text-center mt-3">{response}</p>
             </form>
