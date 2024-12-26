@@ -14,6 +14,15 @@ const Footer = () => {
         <Link to="/credits" className="form-text">
           Credits
         </Link>
+        &nbsp;.&nbsp;
+        <a
+          href="https://github.com/ganeshkalyank/unitastic"
+          target="_blank"
+          rel="noreferrer"
+          className="form-text"
+        >
+          GitHub
+        </a>
       </p>
     </footer>
   );

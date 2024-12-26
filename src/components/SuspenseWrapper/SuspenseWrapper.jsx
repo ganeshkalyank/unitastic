@@ -2,16 +2,12 @@ import { Suspense } from "react";
 import Loader from "../Loader/Loader";
 import PropTypes from "prop-types";
 
-const SuspenseWrapper = ({ children }) => {
+const SuspenseWrapper = ({ children = null }) => {
   return <Suspense fallback={<Loader />}>{children}</Suspense>;
 };
 
 SuspenseWrapper.propTypes = {
   children: PropTypes.node,
-};
-
-SuspenseWrapper.defaultProps = {
-  children: null,
 };
 
 export default SuspenseWrapper;
