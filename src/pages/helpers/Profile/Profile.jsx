@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import ChangePassword from "../../../components/UserInfo/ChangePassword/ChangePassword";
 import { auth } from "../../../firebase";
 import { BASE_URL } from "../../../utils/constants";
-// import SWIIntegration from "../../../components/UserInfo/SWIIntegration/SWIIntegration"
 
 const Profile = () => {
   const [tab, setTab] = useState("personal-details");
@@ -63,15 +62,6 @@ const Profile = () => {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link ${tab === "swi-integration" ? "active" : ""}`}
-                href="#"
-                onClick={() => setTab("swi-integration")}
-              >
-                SWI Integration
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
                 className={`nav-link ${tab === "logout" ? "active" : ""}`}
                 href="#"
                 onClick={handleLogout}
@@ -83,8 +73,6 @@ const Profile = () => {
           <div className="container p-3">
             {tab === "personal-details" && <PersonalDetails />}
             {tab === "change-password" && <ChangePassword />}
-            {/* { tab === "swi-integration" && <SWIIntegration /> } */}
-            {tab === "swi-integration" && <p>Coming soon...</p>}
             {tab === "logout" && <h3>Logout</h3>}
           </div>
         </div>

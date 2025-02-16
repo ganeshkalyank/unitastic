@@ -6,20 +6,20 @@ import { render, screen } from "@testing-library/react";
 vi.mock("../../apis/quote");
 
 test("renders without crashing", async () => {
-  getRandomInspirationalQuote.mockResolvedValue({ content: "", author: "" });
+  getRandomInspirationalQuote.mockResolvedValue({ quote: "", author: "" });
   render(<Quote />);
 });
 
 test("displays quote content and author", async () => {
   const mockQuote = {
-    content: "Test quote",
+    quote: "Test quote",
     author: "Test author",
   };
 
   getRandomInspirationalQuote.mockResolvedValue(mockQuote);
   render(<Quote />);
 
-  const quoteContent = await screen.findByText(mockQuote.content);
+  const quoteContent = await screen.findByText(mockQuote.quote);
   const quoteAuthor = await screen.findByText(mockQuote.author);
 
   expect(quoteContent).not.toBeNull();

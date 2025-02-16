@@ -4,12 +4,12 @@ import "./Quote.css";
 import { QUOTES } from "../../utils/constants";
 
 const Quote = () => {
-  const [quote, setQuote] = useState(
-    QUOTES[Math.floor(Math.random() * QUOTES.length)],
-  );
+  const [quote, setQuote] = useState({ quote: "", author: "" });
 
   useEffect(() => {
-    getRandomInspirationalQuote().then((quote) => setQuote(quote));
+    getRandomInspirationalQuote()
+      .then((quote) => setQuote(quote))
+      .catch(() => setQuote(QUOTES[Math.floor(Math.random() * QUOTES.length)]));
   }, []);
 
   return (
@@ -18,7 +18,7 @@ const Quote = () => {
         <h3 className="text-center mb-3">Random Thought</h3>
         <figure className="text-center">
           <blockquote className="blockquote">
-            <p>{quote.content}</p>
+            <p>{quote.quote}</p>
           </blockquote>
           <figcaption className="blockquote-footer">
             <cite title="Source Title">{quote.author}</cite>

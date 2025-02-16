@@ -76,7 +76,7 @@ const PersonalDetails = () => {
 
   return (
     <div className="personal-details">
-      <h3>Personal Details</h3>
+      <h4>Personal Details</h4>
       <hr />
       <div className="form-floating mb-3 col-lg-6">
         <input
