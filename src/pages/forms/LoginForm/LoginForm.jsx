@@ -4,14 +4,18 @@ import Footer from "../../../components/Footer/Footer";
 import "./LoginForm.css";
 import { useState } from "react";
 import {
+  GoogleAuthProvider,
   onAuthStateChanged,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { auth } from "../../../firebase";
 import { BASE_URL } from "../../../utils/constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 const LoginForm = () => {
   const [user, setUser] = useState({
@@ -44,6 +48,17 @@ const LoginForm = () => {
         setResponse("An error occurred. Please try again later.");
       }
       setSubmitting(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+      setResponse("Login successful.");
+      navigate("/profile");
+    } catch (error) {
+      setResponse("An error occurred. Please try again later.");
     }
   };
 
@@ -123,6 +138,15 @@ const LoginForm = () => {
               </p>
               <p className="text-center mt-3">{response}</p>
             </form>
+            <p className="text-center">or</p>
+            <div className="d-flex justify-content-center gap-2">
+              <button
+                className="btn btn-primary rounded-5 mb-3"
+                onClick={handleGoogleLogin}
+              >
+                <FontAwesomeIcon icon={faGoogle} /> Login with Google
+              </button>
+            </div>
             <hr />
             <p className="text-center">
               Don&apos;t have an account? <Link to="/signup">Signup</Link>

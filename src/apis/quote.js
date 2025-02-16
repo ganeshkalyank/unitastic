@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const quoteApi = axios.create({
-  baseURL: "https://api.quotable.io",
+  baseURL: "https://dummyjson.com",
 });
 
 const getRandomInspirationalQuote = async () => {
-  const response = await quoteApi.get("/random?tags=inspirational");
+  const response = await quoteApi.get("/quotes/random");
   return response.data;
 };
 

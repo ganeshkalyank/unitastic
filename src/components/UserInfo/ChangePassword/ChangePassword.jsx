@@ -49,7 +49,7 @@ const ChangePassword = () => {
 
   return (
     <div className="change-password">
-      <h3>Change Password</h3>
+      <h4>Change Password</h4>
       <hr />
       <form onSubmit={handlePasswordChange}>
         <div className="form-floating mb-3 col-lg-6">
