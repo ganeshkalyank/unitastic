@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -66,10 +65,9 @@ const SignupForm = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Signup | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/signup"} />
-      </Helmet>
+      <title>Signup | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/signup"} />
+
       <Navbar />
       <div className="container signup-form">
         <div className="row d-flex justify-content-center p-3">

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 import "./AttendanceCalculator.css";
-import { Helmet } from "react-helmet-async";
+
 import { calculateCanBunk } from "../../../utils/calculators";
 import { BASE_URL } from "../../../utils/constants";
 
@@ -13,10 +13,9 @@ const AttendanceCalculator = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Class Skippability | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/attendance"} />
-      </Helmet>
+      <title>Class Skippability | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/attendance"} />
+
       <Navbar />
       <div className="container attendance-container">
         <div className="row d-flex justify-content-center p-3 mt-5">

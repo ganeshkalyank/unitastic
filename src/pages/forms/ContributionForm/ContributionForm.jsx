@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../../../components/Navbar/Navbar";
 import "./ContributionForm.css";
 import Footer from "../../../components/Footer/Footer";
-import { Helmet } from "react-helmet-async";
+
 import { postContribution } from "../../../apis/contribution";
 import { BASE_URL } from "../../../utils/constants";
 
@@ -20,10 +20,9 @@ const ContributionForm = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contribute | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/contribute"} />
-      </Helmet>
+      <title>Contribute | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/contribute"} />
+
       <Navbar />
       <div className="container contribution-form">
         <div className="row d-flex justify-content-center p-3">

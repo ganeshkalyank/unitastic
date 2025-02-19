@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import notfound from "../../assets/notfound.svg";
 import "./Maintenance.css";
 import { BASE_URL } from "../../../utils/constants";
@@ -6,10 +5,9 @@ import { BASE_URL } from "../../../utils/constants";
 const Maintenance = () => {
   return (
     <>
-      <Helmet>
-        <title>Unitastic</title>
-        <link rel="canonical" href={BASE_URL} />
-      </Helmet>
+      <title>Unitastic</title>
+      <link rel="canonical" href={BASE_URL} />
+
       <div className="container maintenance-container">
         <h1 className="maintenance-title text-center">Unitastic</h1>
         <div className="d-flex justify-content-center">

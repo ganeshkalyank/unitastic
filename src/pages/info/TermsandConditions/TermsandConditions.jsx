@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import Footer from "../../../components/Footer/Footer";
 import Navbar from "../../../components/Navbar/Navbar";
 import "./TermsandConditions.css";
@@ -7,10 +6,9 @@ import { BASE_URL } from "../../../utils/constants";
 const TermsandConditions = () => {
   return (
     <>
-      <Helmet>
-        <title>Terms and Conditions | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/terms"} />
-      </Helmet>
+      <title>Terms and Conditions | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/terms"} />
+
       <Navbar />
       <div className="container terms-container">
         <h3 className="text-center">Terms and Conditions</h3>

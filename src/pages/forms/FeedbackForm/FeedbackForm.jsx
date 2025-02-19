@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
+
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 import "./FeedbackForm.css";
@@ -21,10 +21,9 @@ const FeedbackForm = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Feedback | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/feedback"} />
-      </Helmet>
+      <title>Feedback | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/feedback"} />
+
       <Navbar />
       <div className="container feedback-form">
         <div className="row d-flex justify-content-center p-3">
