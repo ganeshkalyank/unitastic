@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 import "./Profile.css";
@@ -34,10 +33,9 @@ const Profile = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Profile | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/profile"} />
-      </Helmet>
+      <title>Profile | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/profile"} />
+
       <Navbar />
       <div className="container profile">
         <div className="shadow bg-white rounded-3 p-3">

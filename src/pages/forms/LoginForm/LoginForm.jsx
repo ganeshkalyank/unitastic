@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 import "./LoginForm.css";
@@ -85,10 +84,9 @@ const LoginForm = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Login | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/login"} />
-      </Helmet>
+      <title>Login | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/login"} />
+
       <Navbar />
       <div className="container login-form">
         <div className="row d-flex justify-content-center p-3">

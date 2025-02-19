@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMugHot } from "@fortawesome/free-solid-svg-icons";
-import { Helmet } from "react-helmet-async";
+
 import { BASE_URL } from "../utils/constants";
 
 const Home = () => {
@@ -21,11 +21,8 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Unitastic</title>
-        <link rel="canonical" href={BASE_URL} />
-      </Helmet>
-      {/* <ToastContainer /> */}
+      <title>Unitastic</title>
+      <link rel="canonical" href={BASE_URL} />
       <Navbar />
       <div className="container landing">
         <div className="row gy-5 landing-inner">

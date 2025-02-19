@@ -4,7 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./CGPACalculator.css";
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
-import { Helmet } from "react-helmet-async";
+
 import { calculateCGPA } from "../../../utils/calculators";
 import { BASE_URL } from "../../../utils/constants";
 
@@ -18,10 +18,9 @@ const CGPACalculator = () => {
 
   return (
     <>
-      <Helmet>
-        <title>CGPA Calculator | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/cgpa"} />
-      </Helmet>
+      <title>CGPA Calculator | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/cgpa"} />
+
       <Navbar />
       <div className="container cgpa-container">
         <div className="row d-flex justify-content-center p-3">

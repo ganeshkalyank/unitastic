@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../../../components/Footer/Footer";
 import "./SGPACalculator.css";
-import { Helmet } from "react-helmet-async";
+
 import { calculateSGPA } from "../../../utils/calculators";
 import { BASE_URL } from "../../../utils/constants";
 
@@ -18,10 +18,9 @@ const SGPACalculator = () => {
 
   return (
     <>
-      <Helmet>
-        <title>SGPA Calculator | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/sgpa"} />
-      </Helmet>
+      <title>SGPA Calculator | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/sgpa"} />
+
       <Navbar />
       <div className="container sgpa-container">
         <div className="row d-flex justify-content-center p-3">

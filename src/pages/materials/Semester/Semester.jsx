@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
-import { Helmet } from "react-helmet-async";
+
 import { db } from "../../../firebase";
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
@@ -52,13 +52,12 @@ const Semester = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{semester} | Unitastic</title>
-        <link
-          rel="canonical"
-          href={`https://unitastic.netlify.app/semesters/${id}`}
-        />
-      </Helmet>
+      <title>{semester} | Unitastic</title>
+      <link
+        rel="canonical"
+        href={`https://unitastic.netlify.app/semesters/${id}`}
+      />
+
       <Navbar />
       {loading ? (
         <div className="container semester-container d-flex justify-content-center">

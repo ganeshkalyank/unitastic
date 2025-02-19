@@ -1,4 +1,3 @@
-import { HelmetProvider } from "react-helmet-async";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SuspenseWrapper from "./components/SuspenseWrapper/SuspenseWrapper";
 import { lazy } from "react";
@@ -178,9 +177,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <>
-      <HelmetProvider>
-        <RouterProvider router={router} />
-      </HelmetProvider>
+      <RouterProvider router={router} />
     </>
   );
 };

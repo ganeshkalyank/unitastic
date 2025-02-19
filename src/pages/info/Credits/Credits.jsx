@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import Footer from "../../../components/Footer/Footer";
 import Navbar from "../../../components/Navbar/Navbar";
 import "./Credits.css";
@@ -7,10 +6,9 @@ import { BASE_URL } from "../../../utils/constants";
 const Credits = () => {
   return (
     <>
-      <Helmet>
-        <title>Credits | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/credits"} />
-      </Helmet>
+      <title>Credits | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/credits"} />
+
       <Navbar />
       <div className="container credits-container">
         <h3 className="text-center">Credits</h3>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 import "./SGPAforCGPA.css";
-import { Helmet } from "react-helmet-async";
+
 import { calculateSGPAForCGPA } from "../../../utils/calculators";
 import { BASE_URL } from "../../../utils/constants";
 
@@ -15,10 +15,9 @@ const SGPAforCGPA = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Required SGPA Calculator | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/targetcgpa"} />
-      </Helmet>
+      <title>Required SGPA Calculator | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/targetcgpa"} />
+
       <Navbar />
       <div className="container sgforcg-container">
         <div className="row d-flex justify-content-center p-3">

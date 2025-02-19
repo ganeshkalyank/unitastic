@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../components/Footer/Footer";
 import "./ExpectedExternals.css";
-import { Helmet } from "react-helmet-async";
+
 import { calculateExternals } from "../../../utils/calculators";
 import { BASE_URL } from "../../../utils/constants";
 
@@ -11,10 +11,9 @@ const ExpectedExternals = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Expected Externals | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/externals"} />
-      </Helmet>
+      <title>Expected Externals | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/externals"} />
+
       <Navbar />
       <div className="container externals-container">
         <div className="row d-flex justify-content-center p-3 mt-5">

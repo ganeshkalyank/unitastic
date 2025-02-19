@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+
 import {
   getPersonalizedMaterials,
   getSemesters,
@@ -32,10 +32,9 @@ const Semesters = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Semesters | Unitastic</title>
-        <link rel="canonical" href={BASE_URL + "/semesters"} />
-      </Helmet>
+      <title>Semesters | Unitastic</title>
+      <link rel="canonical" href={BASE_URL + "/semesters"} />
+
       <Navbar />
       {loading ? (
         <div className="container semesters-container d-flex justify-content-center">
