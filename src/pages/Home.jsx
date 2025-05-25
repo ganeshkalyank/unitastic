@@ -50,14 +50,6 @@ const Home = () => {
               Get Materials
             </Link>
             <a
-              href="https://1drv.ms/u/s!AqPn_d7bfTh2cnjPYfnfxXwbC2c?e=gS4vKo"
-              target="_blank"
-              rel="noreferrer"
-              className="btn btn-primary rounded-5 me-2 mb-2"
-            >
-              Download Android App
-            </a>
-            <a
               href="https://buymeacoffee.com/xoidykilr"
               target="_blank"
               rel="noreferrer"
