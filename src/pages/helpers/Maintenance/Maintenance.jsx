@@ -1,4 +1,4 @@
-import notfound from "../../assets/notfound.svg";
+import notfound from "../../../assets/notfound.svg";
 import "./Maintenance.css";
 import { BASE_URL } from "../../../utils/constants";
 
