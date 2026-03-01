@@ -1,27 +1,65 @@
-import { expect, test, vi } from "vitest";
+import { expect, test, vi, describe, beforeEach } from "vitest";
 import { getRandomInspirationalQuote } from "../../apis/quote";
 import Quote from "./Quote";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import { QUOTES } from "../../utils/constants";
 
 vi.mock("../../apis/quote");
+vi.mock("../../utils/constants", () => ({
+  QUOTES: [
+    {
+      quote: "Test fallback quote",
+      author: "Test Author",
+    },
+  ],
+}));
 
-test("renders without crashing", async () => {
-  getRandomInspirationalQuote.mockResolvedValue({ quote: "", author: "" });
-  render(<Quote />);
-});
+describe("Quote Component", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
 
-test("displays quote content and author", async () => {
-  const mockQuote = {
-    quote: "Test quote",
-    author: "Test author",
-  };
+  test("renders without crashing", async () => {
+    getRandomInspirationalQuote.mockResolvedValue({ quote: "", author: "" });
+    render(<Quote />);
+    expect(screen.getByText("Random Thought")).toBeInTheDocument();
+  });
 
-  getRandomInspirationalQuote.mockResolvedValue(mockQuote);
-  render(<Quote />);
+  test("displays quote content and author from API", async () => {
+    const mockQuote = {
+      quote: "Test quote from API",
+      author: "API Author",
+    };
 
-  const quoteContent = await screen.findByText(mockQuote.quote);
-  const quoteAuthor = await screen.findByText(mockQuote.author);
+    getRandomInspirationalQuote.mockResolvedValue(mockQuote);
+    render(<Quote />);
 
-  expect(quoteContent).not.toBeNull();
-  expect(quoteAuthor).not.toBeNull();
+    await waitFor(() => {
+      expect(screen.getByText(mockQuote.quote)).toBeInTheDocument();
+      expect(screen.getByText(mockQuote.author)).toBeInTheDocument();
+    });
+  });
+
+  test("displays fallback quote when API fails", async () => {
+    getRandomInspirationalQuote.mockRejectedValue(new Error("API Error"));
+    const mathRandomSpy = vi.spyOn(Math, "random").mockReturnValue(0);
+    
+    render(<Quote />);
+
+    await waitFor(() => {
+      expect(screen.getByText("Test fallback quote")).toBeInTheDocument();
+      expect(screen.getByText("Test Author")).toBeInTheDocument();
+    });
+
+    mathRandomSpy.mockRestore();
+  });
+
+  test("has correct structure and CSS classes", () => {
+    getRandomInspirationalQuote.mockResolvedValue({ quote: "Test", author: "Author" });
+    render(<Quote />);
+    
+    expect(document.querySelector(".quote-container")).toBeInTheDocument();
+    expect(document.querySelector(".blockquote")).toBeInTheDocument();
+    expect(document.querySelector(".blockquote-footer")).toBeInTheDocument();
+  });
 });
