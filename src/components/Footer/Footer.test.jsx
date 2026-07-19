@@ -94,10 +94,7 @@ describe("Footer Component", () => {
   });
 
   test("updates copyright year dynamically", () => {
-    // Mock Date to test dynamic year
-    const originalDate = Date;
-    const mockDate = vi.fn(() => ({ getFullYear: () => 2025 }));
-    global.Date = mockDate;
+    const yearSpy = vi.spyOn(Date.prototype, "getFullYear").mockReturnValue(2025);
 
     render(
       <RouterWrapper>
@@ -107,7 +104,6 @@ describe("Footer Component", () => {
 
     expect(screen.getByText("© Copyright Unitastic 2025. All rights reserved.")).toBeInTheDocument();
 
-    // Restore original Date
-    global.Date = originalDate;
+    yearSpy.mockRestore();
   });
 });
